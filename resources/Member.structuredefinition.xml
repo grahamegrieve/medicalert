@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
+  <name value="MedicAlertMember" />
+  <title value="Medic Alert Member" />
+  <status value="draft" />
+  <date value="2017-07-11T20:24:22.0152138+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Member" />
+  <purpose value="Medic Alert Member" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Patient" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Patient" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Patient.identifier">
+      <path value="Patient.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <max value="2" />
+    </element>
+    <element id="Patient.identifier:NHINumber">
+      <path value="Patient.identifier" />
+      <sliceName value="NHINumber" />
+      <max value="1" />
+    </element>
+    <element id="Patient.identifier:NHINumber.use">
+      <path value="Patient.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:NHINumber.type">
+      <path value="Patient.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:NHINumber.system">
+      <path value="Patient.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://health.govt.nz/nhi " />
+    </element>
+    <element id="Patient.identifier:NHINumber.value">
+      <path value="Patient.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:NHINumber.period">
+      <path value="Patient.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:NHINumber.assigner">
+      <path value="Patient.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:MedicAlertNumber">
+      <path value="Patient.identifier" />
+      <sliceName value="MedicAlertNumber" />
+      <max value="1" />
+    </element>
+    <element id="Patient.identifier:MedicAlertNumber.use">
+      <path value="Patient.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:MedicAlertNumber.type">
+      <path value="Patient.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:MedicAlertNumber.system">
+      <path value="Patient.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://medicalert.nz/member-id" />
+    </element>
+    <element id="Patient.identifier:MedicAlertNumber.value">
+      <path value="Patient.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:MedicAlertNumber.period">
+      <path value="Patient.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:MedicAlertNumber.assigner">
+      <path value="Patient.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Patient.active">
+      <path value="Patient.active" />
+      <min value="1" />
+      <fixedBoolean value="true" />
+    </element>
+    <element id="Patient.name">
+      <path value="Patient.name" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="use" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <max value="2" />
+    </element>
+    <element id="Patient.name:PatientName">
+      <path value="Patient.name" />
+      <sliceName value="PatientName" />
+      <max value="1" />
+    </element>
+    <element id="Patient.name:PatientName.use">
+      <path value="Patient.name.use" />
+      <short value="usual | officfficialial | temp | nickname | anonymous | old | maiden" />
+      <min value="1" />
+      <fixedCode value="official" />
+    </element>
+    <element id="Patient.name:PatientName.text">
+      <path value="Patient.name.text" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name:PatientName.family">
+      <path value="Patient.name.family" />
+      <min value="1" />
+    </element>
+    <element id="Patient.name:PatientName.given">
+      <path value="Patient.name.given" />
+      <min value="1" />
+    </element>
+    <element id="Patient.name:PatientName.prefix">
+      <path value="Patient.name.prefix" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name:PatientName.suffix">
+      <path value="Patient.name.suffix" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name:PatientName.period">
+      <path value="Patient.name.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name:NickName">
+      <path value="Patient.name" />
+      <sliceName value="NickName" />
+      <max value="1" />
+    </element>
+    <element id="Patient.name:NickName.use">
+      <path value="Patient.name.use" />
+      <fixedCode value="nickname" />
+    </element>
+    <element id="Patient.name:NickName.text">
+      <path value="Patient.name.text" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name:NickName.family">
+      <path value="Patient.name.family" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name:NickName.given">
+      <path value="Patient.name.given" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Patient.name:NickName.prefix">
+      <path value="Patient.name.prefix" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name:NickName.suffix">
+      <path value="Patient.name.suffix" />
+      <max value="0" />
+    </element>
+    <element id="Patient.name:NickName.period">
+      <path value="Patient.name.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom">
+      <path value="Patient.telecom" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <discriminator>
+          <type value="value" />
+          <path value="use" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <max value="3" />
+    </element>
+    <element id="Patient.telecom:HomePhone">
+      <path value="Patient.telecom" />
+      <sliceName value="HomePhone" />
+      <max value="1" />
+    </element>
+    <element id="Patient.telecom:HomePhone.system">
+      <path value="Patient.telecom.system" />
+      <min value="1" />
+      <fixedCode value="phone" />
+    </element>
+    <element id="Patient.telecom:HomePhone.value">
+      <path value="Patient.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.telecom:HomePhone.use">
+      <path value="Patient.telecom.use" />
+      <min value="1" />
+      <fixedCode value="home" />
+    </element>
+    <element id="Patient.telecom:HomePhone.rank">
+      <path value="Patient.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom:HomePhone.period">
+      <path value="Patient.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom:MobilePhone">
+      <path value="Patient.telecom" />
+      <sliceName value="MobilePhone" />
+      <max value="1" />
+    </element>
+    <element id="Patient.telecom:MobilePhone.system">
+      <path value="Patient.telecom.system" />
+      <min value="1" />
+      <fixedCode value="phone" />
+    </element>
+    <element id="Patient.telecom:MobilePhone.value">
+      <path value="Patient.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.telecom:MobilePhone.use">
+      <path value="Patient.telecom.use" />
+      <min value="1" />
+      <fixedCode value="mobile" />
+    </element>
+    <element id="Patient.telecom:MobilePhone.rank">
+      <path value="Patient.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom:MobilePhone.period">
+      <path value="Patient.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom:Email">
+      <path value="Patient.telecom" />
+      <sliceName value="Email" />
+      <max value="1" />
+    </element>
+    <element id="Patient.telecom:Email.system">
+      <path value="Patient.telecom.system" />
+      <min value="1" />
+      <fixedCode value="email" />
+    </element>
+    <element id="Patient.telecom:Email.value">
+      <path value="Patient.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.telecom:Email.use">
+      <path value="Patient.telecom.use" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom:Email.rank">
+      <path value="Patient.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="Patient.telecom:Email.period">
+      <path value="Patient.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.deceased[x]">
+      <path value="Patient.deceased[x]" />
+      <max value="0" />
+    </element>
+    <element id="Patient.address">
+      <path value="Patient.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Address" />
+      </type>
+    </element>
+    <element id="Patient.maritalStatus">
+      <path value="Patient.maritalStatus" />
+      <max value="0" />
+    </element>
+    <element id="Patient.multipleBirth[x]">
+      <path value="Patient.multipleBirth[x]" />
+      <max value="0" />
+    </element>
+    <element id="Patient.photo">
+      <path value="Patient.photo" />
+      <max value="1" />
+    </element>
+    <element id="Patient.contact.relationship">
+      <path value="Patient.contact.relationship" />
+      <max value="1" />
+    </element>
+    <element id="Patient.contact.relationship.coding">
+      <path value="Patient.contact.relationship.coding" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.relationship.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Patient.contact.relationship.text" />
+      <min value="1" />
+    </element>
+    <element id="Patient.contact.name.use">
+      <path value="Patient.contact.name.use" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.name.text">
+      <path value="Patient.contact.name.text" />
+      <min value="1" />
+    </element>
+    <element id="Patient.contact.name.family">
+      <path value="Patient.contact.name.family" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.name.given">
+      <path value="Patient.contact.name.given" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.name.prefix">
+      <path value="Patient.contact.name.prefix" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.name.suffix">
+      <path value="Patient.contact.name.suffix" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.name.period">
+      <path value="Patient.contact.name.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.telecom">
+      <path value="Patient.contact.telecom" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <discriminator>
+          <type value="value" />
+          <path value="use" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.contact.telecom:HomePhone">
+      <path value="Patient.contact.telecom" />
+      <sliceName value="HomePhone" />
+    </element>
+    <element id="Patient.contact.telecom:HomePhone.system">
+      <path value="Patient.contact.telecom.system" />
+      <min value="1" />
+      <fixedCode value="phone" />
+    </element>
+    <element id="Patient.contact.telecom:HomePhone.value">
+      <path value="Patient.contact.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.contact.telecom:HomePhone.use">
+      <path value="Patient.contact.telecom.use" />
+      <min value="1" />
+      <fixedCode value="home" />
+    </element>
+    <element id="Patient.contact.telecom:HomePhone.rank">
+      <path value="Patient.contact.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.telecom:HomePhone.period">
+      <path value="Patient.contact.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.telecom:MobilePhone">
+      <path value="Patient.contact.telecom" />
+      <sliceName value="MobilePhone" />
+    </element>
+    <element id="Patient.contact.telecom:MobilePhone.system">
+      <path value="Patient.contact.telecom.system" />
+      <min value="1" />
+      <fixedCode value="phone" />
+    </element>
+    <element id="Patient.contact.telecom:MobilePhone.value">
+      <path value="Patient.contact.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.contact.telecom:MobilePhone.use">
+      <path value="Patient.contact.telecom.use" />
+      <min value="1" />
+      <fixedCode value="mobile" />
+    </element>
+    <element id="Patient.contact.telecom:MobilePhone.rank">
+      <path value="Patient.contact.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.telecom:MobilePhone.period">
+      <path value="Patient.contact.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.telecom:Email">
+      <path value="Patient.contact.telecom" />
+      <sliceName value="Email" />
+    </element>
+    <element id="Patient.contact.telecom:Email.system">
+      <path value="Patient.contact.telecom.system" />
+      <min value="1" />
+      <fixedCode value="email" />
+    </element>
+    <element id="Patient.contact.telecom:Email.value">
+      <path value="Patient.contact.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.contact.telecom:Email.use">
+      <path value="Patient.contact.telecom.use" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.telecom:Email.rank">
+      <path value="Patient.contact.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.telecom:Email.period">
+      <path value="Patient.contact.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.address">
+      <path value="Patient.contact.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Address" />
+      </type>
+    </element>
+    <element id="Patient.contact.gender">
+      <path value="Patient.contact.gender" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.organization">
+      <path value="Patient.contact.organization" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.period">
+      <path value="Patient.contact.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.animal">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Animal" />
+      </extension>
+      <path value="Patient.animal" />
+      <max value="0" />
+    </element>
+    <element id="Patient.communication">
+      <path value="Patient.communication" />
+      <max value="0" />
+    </element>
+    <element id="Patient.generalPractitioner">
+      <path value="Patient.generalPractitioner" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+    </element>
+    <element id="Patient.managingOrganization">
+      <path value="Patient.managingOrganization" />
+      <max value="0" />
+    </element>
+    <element id="Patient.link">
+      <path value="Patient.link" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

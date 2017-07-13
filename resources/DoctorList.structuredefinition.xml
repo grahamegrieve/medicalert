@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/DoctorList" />
+  <name value="MedicAlertDoctorList" />
+  <title value="Medic Alert Doctor List" />
+  <status value="draft" />
+  <date value="2017-07-12T21:09:54.8724651+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Doctor List" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="CareTeam" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CareTeam" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="CareTeam.identifier">
+      <path value="CareTeam.identifier" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.status">
+      <path value="CareTeam.status" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.category">
+      <path value="CareTeam.category" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.name">
+      <path value="CareTeam.name" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.subject">
+      <path value="CareTeam.subject" />
+      <short value="Medic Alert Member" />
+      <definition value="Medic Alert Member reference" />
+      <comment value="n/a" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
+      </type>
+    </element>
+    <element>
+      <path value="CareTeam.subject.reference" />
+      <short value="Relative Reference to Medic Alert Member" />
+      <definition value="Medic Alert Member" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="CareTeam.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="CareTeam.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.context">
+      <path value="CareTeam.context" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.period">
+      <path value="CareTeam.period" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.participant">
+      <path value="CareTeam.participant" />
+      <definition value="Doctors listed for the patient" />
+    </element>
+    <element id="CareTeam.participant.role">
+      <path value="CareTeam.participant.role" />
+      <definition value="Type of Doctor" />
+      <comment value="n/a" />
+    </element>
+    <element id="CareTeam.participant.role.coding">
+      <path value="CareTeam.participant.role.coding" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.participant.role.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="CareTeam.participant.role.text" />
+      <definition value="Type of Doctor" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="CareTeam.participant.member">
+      <path value="CareTeam.participant.member" />
+      <definition value="Reference to Doctor" />
+      <comment value="n/a" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+        <aggregation value="contained" />
+      </type>
+    </element>
+    <element>
+      <path value="CareTeam.participant.member.reference" />
+      <short value="Contained Reference to Doctor" />
+      <definition value="Contained reference to doctor" />
+      <comment value="reference starts with #" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="CareTeam.participant.member.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="CareTeam.participant.member.display" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.participant.onBehalfOf">
+      <path value="CareTeam.participant.onBehalfOf" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.participant.period">
+      <path value="CareTeam.participant.period" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.reasonCode">
+      <path value="CareTeam.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.reasonReference">
+      <path value="CareTeam.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.managingOrganization">
+      <path value="CareTeam.managingOrganization" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.note">
+      <path value="CareTeam.note" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

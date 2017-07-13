@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Doctor" />
+  <name value="MedicAlertDoctor" />
+  <title value="Medic Alert Doctor" />
+  <status value="draft" />
+  <date value="2017-07-12T21:00:08.0123892+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Doctor" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Practitioner" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Practitioner">
+      <path value="Practitioner" />
+      <short value="Doctor - part of a Medic Alert Care Team" />
+      <definition value="Doctor in a medic alert member record" />
+      <comment value="n/a" />
+    </element>
+    <element id="Practitioner.identifier">
+      <path value="Practitioner.identifier" />
+      <short value="HPI for Doctor" />
+      <definition value="Doctor" />
+      <max value="1" />
+    </element>
+    <element id="Practitioner.identifier.use">
+      <path value="Practitioner.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier.type">
+      <path value="Practitioner.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier.system">
+      <path value="Practitioner.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org.nz/fhir/hpi/cpn" />
+    </element>
+    <element id="Practitioner.identifier.value">
+      <path value="Practitioner.identifier.value" />
+      <short value="HPI Number" />
+      <definition value="HPI Number" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.identifier.period">
+      <path value="Practitioner.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier.assigner">
+      <path value="Practitioner.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.active">
+      <path value="Practitioner.active" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name">
+      <path value="Practitioner.name" />
+      <comment value="n/a" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Practitioner.name.use">
+      <path value="Practitioner.name.use" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name.text">
+      <path value="Practitioner.name.text" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.name.family">
+      <path value="Practitioner.name.family" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name.given">
+      <path value="Practitioner.name.given" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name.prefix">
+      <path value="Practitioner.name.prefix" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name.suffix">
+      <path value="Practitioner.name.suffix" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name.period">
+      <path value="Practitioner.name.period" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.telecom">
+      <path value="Practitioner.telecom" />
+      <short value="Phone Number for Doctor" />
+      <definition value="Phone Number for Doctor" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="Practitioner.telecom.system">
+      <path value="Practitioner.telecom.system" />
+      <min value="1" />
+      <fixedCode value="phone" />
+    </element>
+    <element id="Practitioner.telecom.value">
+      <path value="Practitioner.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.telecom.use">
+      <path value="Practitioner.telecom.use" />
+      <min value="1" />
+      <fixedCode value="work" />
+    </element>
+    <element id="Practitioner.telecom.rank">
+      <path value="Practitioner.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.telecom.period">
+      <path value="Practitioner.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.address">
+      <path value="Practitioner.address" />
+      <short value="Address of Doctor" />
+      <definition value="Address of Doctor" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="Practitioner.address.use">
+      <path value="Practitioner.address.use" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.address.type">
+      <path value="Practitioner.address.type" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.address.text">
+      <path value="Practitioner.address.text" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.address.line">
+      <path value="Practitioner.address.line" />
+      <max value="1" />
+    </element>
+    <element id="Practitioner.address.country">
+      <path value="Practitioner.address.country" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.address.period">
+      <path value="Practitioner.address.period" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.gender">
+      <path value="Practitioner.gender" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.birthDate">
+      <path value="Practitioner.birthDate" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.photo">
+      <path value="Practitioner.photo" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.qualification">
+      <path value="Practitioner.qualification" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.communication">
+      <path value="Practitioner.communication" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

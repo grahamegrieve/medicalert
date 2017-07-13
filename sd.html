@@ -1,0 +1,177 @@
+---
+# jekyll header
+level: 2
+active: profiles
+---
+
+  {% include header.html %}
+
+{% include container-start.html %}
+
+
+<h3><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}<a name="SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}"> </a></span>Profile {{[id]}}<a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}"><img src="target.png"/></a></h3>
+
+<a name="introduction"> </a>
+
+{% capture my-include %}{% include {{[id]}}-intro.md %}{% endcapture %}{{ my-include | markdownify }}
+
+<!-- search text here-->
+<a name="access"> </a>
+<h4><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.1 - </span> Access <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#access"><img src="target.png"/></a></h4>
+
+{% capture my-include %}{% include {{[id]}}-access.md %}{% endcapture %}{{ my-include | markdownify }}
+
+<a name="template"> </a>
+<h4><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.2</span>
+Template
+ <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#template"><img src="target.png"/></a>
+</h4>
+
+<p>
+Each resource will follow this pattern:
+</p>
+
+{% include {{[type]}}-{{[id]}}-pseudo-json.xhtml %}
+
+<a name="examples"> </a>
+<h4><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.2</span>
+Examples
+ <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#examples"><img src="target.png"/></a>
+</h4>
+
+<p>
+<i>Still to be done</i>
+</p>
+
+<a name="profile"> </a>
+<h4><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.3</span>
+Formal Views of Profile Content
+ <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#profile"><img src="target.png"/></a>
+</h4>
+<!-- uri -->
+{% include {{[type]}}-{{[id]}}-header.xhtml %}
+
+<!-- uri -->
+<p>
+<a href="{{site.data.fhir.path}}profiling.html#representation">Description of Profiles, Differentials, and Snapshots</a>.
+</p>
+
+<div id="tabs">
+ <ul>
+  <li><a href="#tabs-summ">Text Summary</a></li>
+  <li><a href="#tabs-diff">Differential Table</a></li>
+  <li><a href="#tabs-snap">Snapshot Table</a></li>
+<!--
+  <li><a href="#tabs-xml">XML Template</a></li>
+  <li><a href="#tabs-json">JSON Template</a></li>
+-->
+  <li><a href="#tabs-defn">Formal Definitions</a></li>
+  <li><a href="#tabs-all">All</a></li>
+ </ul>
+
+ <div id="tabs-summ">
+  <div id="tbl-summ">
+   <div id="tbl-diff-inner">
+     <a name="summary"> </a>
+<!--{% include {{[type]}}-{{[id]}}-summary.xhtml %}-->
+
+{% capture my-include %}{% include {{[id]}}-summary.md %}{% endcapture %}{{ my-include | markdownify }}
+   </div>
+  </div>
+ </div>
+
+ <div id="tabs-diff">
+  <div id="tbl-diff">
+   <div id="tbl-diff-inner">
+  {% include {{[type]}}-{{[id]}}-diff.xhtml %}
+   </div>
+  </div>
+ </div>
+
+ <div id="tabs-snap">
+  <div id="tbl-snap">
+   <div id="tbl-snap-inner">
+{% include {{[type]}}-{{[id]}}-snapshot.xhtml %}
+   </div>
+  </div>
+ </div>
+
+ <div id="tabs-defn">
+  <div id="tbl-defn">
+   <div id="tbl-defn-inner">
+{% include {{[type]}}-{{[id]}}-dict.xhtml %}
+   </div>
+  </div>
+ </div>
+
+ <div id="tabs-all">
+  <div id="tbl-summ">
+   <div id="tbl-diff-inner">
+     <a name="summary"> </a>
+<!--   {% include {{[type]}}-{{[id]}}-summary.xhtml %}  -->
+{% capture my-include %}{% include {{[id]}}-summary.md %}{% endcapture %}{{ my-include | markdownify }}
+   </div>
+  </div>
+
+ <div id="all-tbl-diff">
+   <p><b>Differential View</b></p>
+   <div id="all-tbl-diff-inner">
+   {% include {{[type]}}-{{[id]}}-diff.xhtml %}
+   </div>
+  </div>
+  <div id="all-tbl-snap">
+   <p><b>Snapshot View</b></p>
+   <div id="all-tbl-snap-inner">
+{% include {{[type]}}-{{[id]}}-snapshot.xhtml %}
+   </div>
+  </div>
+
+  <div id="all-tbl-defn">
+   <p><b>Snapshot View</b></p>
+   <div id="all-tbl-defn-inner">
+{% include {{[type]}}-{{[id]}}-dict.xhtml %}
+   </div>
+  </div>
+ </div>
+</div>
+
+
+<a name="downloads"> </a>
+<p>Downloads: StructureDefinition: (<a href="{{[type]}}-{{[id]}}.xml" download>XML</a>, <a href="{{[type]}}-{{[id]}}.json" download>JSON</a>), Schema:  <a href="{{[id]}}.sch" download>XML Schematron</a></p>
+
+<p>&nbsp;</p>
+
+
+
+  <!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+<script src="jquery.js"> </script>
+<script src="jquery-ui.min.js"> </script>
+<script>
+try {
+  var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
+}
+catch(exception){
+}
+
+if (!currentTabIndex)
+  currentTabIndex = '0';
+
+$( '#tabs' ).tabs({
+         active: currentTabIndex,
+         activate: function( event, ui ) {
+             var active = $('.selector').tabs('option', 'active');
+             currentTabIndex = ui.newTab.index();
+             document.activeElement.blur();
+             try {
+               sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
+             }
+             catch(exception){
+             }
+         }
+     });
+</script>
+
+{% include footer.html %}

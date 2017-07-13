@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Document" />
+  <name value="MedicAlertDocument" />
+  <title value="Medic Alert Document" />
+  <status value="draft" />
+  <date value="2017-07-12T20:35:02.794564+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Document" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="DocumentReference" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="DocumentReference.masterIdentifier">
+      <path value="DocumentReference.masterIdentifier" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.identifier">
+      <path value="DocumentReference.identifier" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.status">
+      <path value="DocumentReference.status" />
+      <definition value="Only current documents are available" />
+      <comment value="n/a" />
+      <fixedCode value="current" />
+    </element>
+    <element id="DocumentReference.docStatus">
+      <path value="DocumentReference.docStatus" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.type">
+      <path value="DocumentReference.type" />
+      <short value="Document Type (as text)" />
+      <definition value="The type of document referenced" />
+      <comment value="n/a" />
+    </element>
+    <element id="DocumentReference.type.coding">
+      <path value="DocumentReference.type.coding" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.type.text" />
+      <short value="Document Type" />
+      <definition value="Document Type" />
+      <comment value="e.g. Emergency Medical Action Plan,Drug Trial Action Plan,Medical Warning Document,Advanced Directive,Advance Care Plan,Power of Attorney,Enduring Power of Attorney - Welfare,Health Passport (NZ GOVT HDC)" />
+    </element>
+    <element id="DocumentReference.class">
+      <path value="DocumentReference.class" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.subject">
+      <path value="DocumentReference.subject" />
+      <short value="Medic Alert Member" />
+      <definition value="Medic Alert Member reference" />
+      <comment value="n/a" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
+      </type>
+    </element>
+    <element>
+      <path value="DocumentReference.subject.reference" />
+      <short value="Relative Reference to Medic Alert Member" />
+      <definition value="Medic Alert Member" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="DocumentReference.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="DocumentReference.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.created">
+      <path value="DocumentReference.created" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.indexed">
+      <path value="DocumentReference.indexed" />
+      <definition value="When document was added to database (or today, if the database doesn't track that)" />
+      <comment value="n/a" />
+    </element>
+    <element id="DocumentReference.author">
+      <path value="DocumentReference.author" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.authenticator">
+      <path value="DocumentReference.authenticator" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.custodian">
+      <path value="DocumentReference.custodian" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.relatesTo">
+      <path value="DocumentReference.relatesTo" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.description">
+      <path value="DocumentReference.description" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.securityLabel">
+      <path value="DocumentReference.securityLabel" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content">
+      <path value="DocumentReference.content" />
+      <max value="1" />
+    </element>
+    <element id="DocumentReference.content.attachment.contentType">
+      <path value="DocumentReference.content.attachment.contentType" />
+      <definition value="will be application/bin if the type is unknown" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.content.attachment.language">
+      <path value="DocumentReference.content.attachment.language" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content.attachment.data">
+      <path value="DocumentReference.content.attachment.data" />
+      <definition value="The actual data of the attachment - a sequence of bytes" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.content.attachment.url">
+      <path value="DocumentReference.content.attachment.url" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content.attachment.size">
+      <path value="DocumentReference.content.attachment.size" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content.attachment.hash">
+      <path value="DocumentReference.content.attachment.hash" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content.attachment.title">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.content.attachment.title" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content.attachment.creation">
+      <path value="DocumentReference.content.attachment.creation" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content.format">
+      <path value="DocumentReference.content.format" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context">
+      <path value="DocumentReference.context" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

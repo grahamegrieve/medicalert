@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Procedure" />
+  <name value="MedicAlertProcedure" />
+  <title value="Medic Alert Procedure" />
+  <status value="draft" />
+  <date value="2017-07-11T22:03:42.6745844+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Procedure" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Procedure" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Procedure.identifier">
+      <path value="Procedure.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.definition">
+      <path value="Procedure.definition" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.basedOn">
+      <path value="Procedure.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.partOf">
+      <path value="Procedure.partOf" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.status">
+      <path value="Procedure.status" />
+      <definition value="The procedure is assumed to be complete" />
+      <comment value="n/a" />
+      <fixedCode value="completed" />
+    </element>
+    <element id="Procedure.notDone">
+      <path value="Procedure.notDone" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.notDoneReason">
+      <path value="Procedure.notDoneReason" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.category">
+      <path value="Procedure.category" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.code">
+      <path value="Procedure.code" />
+      <definition value="Description of Procedure" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.code.coding">
+      <path value="Procedure.code.coding" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Procedure.code.text" />
+      <definition value="Description of Procedure" />
+      <comment value="n/a" />
+    </element>
+    <element id="Procedure.subject">
+      <path value="Procedure.subject" />
+      <short value="Medic Alert Member" />
+      <definition value="Medic Alert Member reference" />
+      <comment value="n/a" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
+      </type>
+    </element>
+    <element>
+      <path value="Procedure.subject.reference" />
+      <short value="Relative Reference to Medic Alert Member" />
+      <definition value="Medic Alert Member" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Procedure.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Procedure.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.context">
+      <path value="Procedure.context" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.performed[x]:performedDateTime">
+      <path value="Procedure.performedDateTime" />
+      <sliceName value="performedDateTime" />
+      <definition value="When procedure was performed" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Procedure.performer">
+      <path value="Procedure.performer" />
+      <definition value="Description of who performed the procedure" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="Procedure.performer.role">
+      <path value="Procedure.performer.role" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.performer.actor">
+      <path value="Procedure.performer.actor" />
+      <definition value="Description of who performed the procedure" />
+      <comment value="n/a" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+      </type>
+    </element>
+    <element>
+      <path value="Procedure.performer.actor.reference" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Procedure.performer.actor.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Procedure.performer.actor.display" />
+      <definition value="Description of who performed the procedure" />
+      <comment value="n/a" />
+    </element>
+    <element id="Procedure.performer.onBehalfOf">
+      <path value="Procedure.performer.onBehalfOf" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.location">
+      <path value="Procedure.location" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode">
+      <path value="Procedure.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonReference">
+      <path value="Procedure.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.bodySite">
+      <path value="Procedure.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.outcome">
+      <path value="Procedure.outcome" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.report">
+      <path value="Procedure.report" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.complication">
+      <path value="Procedure.complication" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.complicationDetail">
+      <path value="Procedure.complicationDetail" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.followUp">
+      <path value="Procedure.followUp" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.note">
+      <path value="Procedure.note" />
+      <definition value="Note about the procedure" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="Procedure.note.author[x]">
+      <path value="Procedure.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.note.time">
+      <path value="Procedure.note.time" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.note.text">
+      <path value="Procedure.note.text" />
+      <definition value="Note about the procedure" />
+      <comment value="n/a" />
+    </element>
+    <element id="Procedure.focalDevice">
+      <path value="Procedure.focalDevice" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Procedure.usedReference">
+      <path value="Procedure.usedReference" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Procedure.usedCode">
+      <path value="Procedure.usedCode" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+  </differential>
+</StructureDefinition>

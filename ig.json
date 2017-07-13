@@ -1,0 +1,45 @@
+{
+	"paths": {
+		"output": "output",
+		"pages": "pages",
+		"resources": ["resources"],
+		"temp": "temp",
+		"qa": "qa",
+		"specification": "http://hl7.org/fhir/",
+		"txCache": "txCache"
+	},
+	"sct-edition": "http://snomed.info/sct/900000000000207008",
+  "version" : "3.0.1",
+	"source": "ig.xml",
+	"defaults": {
+		"ValueSet": {
+			"template-base": "vs.html"
+		},
+		"Any": {
+			"template-base": "base.html",
+			"template-format": "format.html"
+		},
+		"StructureDefinition": {
+			"template-defns": "sd-definitions.html",
+			"template-base": "sd.html",
+			"template-mappings": "sd-mappings.html"
+		},
+		"CodeSystem": {
+			"template-base": "codesys.html"
+		},
+		"ConceptMap": {
+			"template-base": "cm.html"
+		}
+	},
+	"gen-examples": "true",
+	"resources": {
+    "*" : true
+	},
+	"tool": "jekyll",
+	"fixed-business-version": "0.1",
+	"canonicalBase": "http://build.fhir.org/ig/grahamegrieve/medicalert",
+	"dependencyList": [{
+		"name": "uscore",
+		"location": "http://hl7.org/fhir/us/core/"
+	}]
+}

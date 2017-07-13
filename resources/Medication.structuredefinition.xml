@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Medication" />
+  <name value="MedicAlertMedication" />
+  <title value="Medic Alert Medication" />
+  <status value="draft" />
+  <date value="2017-07-11T21:39:02.8907483+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Medication" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="MedicationStatement" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="MedicationStatement.identifier">
+      <path value="MedicationStatement.identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.basedOn">
+      <path value="MedicationStatement.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.basedOn.reference">
+      <path value="MedicationStatement.basedOn.reference" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.basedOn.identifier">
+      <path value="MedicationStatement.basedOn.identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.basedOn.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MedicationStatement.basedOn.display" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.partOf">
+      <path value="MedicationStatement.partOf" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.context">
+      <path value="MedicationStatement.context" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.status">
+      <path value="MedicationStatement.status" />
+      <definition value="All records are considered completed" />
+      <comment value="Note that this doesn't mean that the medication is complete - just that the medication record is stable" />
+      <fixedCode value="completed" />
+    </element>
+    <element id="MedicationStatement.category">
+      <path value="MedicationStatement.category" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept">
+      <path value="MedicationStatement.medicationCodeableConcept" />
+      <sliceName value="medicationCodeableConcept" />
+      <definition value="Details about the medication. Text, and possibly one or two codes: SNOMED CT, and MIMS" />
+      <comment value="n/a" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element>
+      <path value="MedicationStatement.medicationCodeableConcept.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <definition value="maybe a snomed code or a MIMS code" />
+      <max value="2" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode">
+      <path value="MedicationStatement.medicationCodeableConcept.coding" />
+      <sliceName value="SnomedCode" />
+      <definition value="SNOMED CT  code for the medication" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode.system">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.system" />
+      <definition value="identifies SNOMED CT" />
+      <comment value="n/a" />
+      <min value="1" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode.version">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode.code">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.code" />
+      <definition value="Snomed CT code - maybe AMT code" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MedicationStatement.medicationCodeableConcept.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode.userSelected">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode">
+      <path value="MedicationStatement.medicationCodeableConcept.coding" />
+      <sliceName value="MimsCode" />
+      <definition value="MIMS Code" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode.system">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.system" />
+      <definition value="Identifies MIMS" />
+      <comment value="n/a" />
+      <min value="1" />
+      <fixedUri value="http://www.mims.com.au/" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode.version">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode.code">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.code" />
+      <definition value="MIMS Code" />
+      <comment value="n/.a" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MedicationStatement.medicationCodeableConcept.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode.userSelected">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MedicationStatement.medicationCodeableConcept.text" />
+      <definition value="Description of the medication" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.effective[x]">
+      <path value="MedicationStatement.effective[x]" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dateAsserted">
+      <path value="MedicationStatement.dateAsserted" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.informationSource">
+      <path value="MedicationStatement.informationSource" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.subject">
+      <path value="MedicationStatement.subject" />
+      <short value="Medic Alert Member" />
+      <definition value="Medic Alert Member reference" />
+      <comment value="n/a" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
+      </type>
+    </element>
+    <element>
+      <path value="MedicationStatement.subject.reference" />
+      <short value="Relative Reference to Medic Alert Member" />
+      <definition value="Medic Alert Member" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="MedicationStatement.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="MedicationStatement.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.derivedFrom">
+      <path value="MedicationStatement.derivedFrom" />
+      <definition value="Details about the original prescription" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="MedicationStatement.derivedFrom.reference">
+      <path value="MedicationStatement.derivedFrom.reference" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.derivedFrom.identifier">
+      <path value="MedicationStatement.derivedFrom.identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.derivedFrom.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="MedicationStatement.derivedFrom.display" />
+      <definition value="Details about the original prescription" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.taken">
+      <path value="MedicationStatement.taken" />
+      <definition value="We assume that the member is taking the medication" />
+      <comment value="Fixed to true - presumably?" />
+      <fixedCode value="y" />
+    </element>
+    <element id="MedicationStatement.reasonNotTaken">
+      <path value="MedicationStatement.reasonNotTaken" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.reasonCode">
+      <path value="MedicationStatement.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.reasonReference">
+      <path value="MedicationStatement.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.note">
+      <path value="MedicationStatement.note" />
+      <definition value="Medication Notes" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="MedicationStatement.note.author[x]">
+      <path value="MedicationStatement.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.note.time">
+      <path value="MedicationStatement.note.time" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.note.text">
+      <path value="MedicationStatement.note.text" />
+      <definition value="Medication Notes" />
+      <comment value="n/a" />
+    </element>
+    <element id="MedicationStatement.dosage">
+      <path value="MedicationStatement.dosage" />
+      <definition value="Dosage Details" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="MedicationStatement.dosage.sequence">
+      <path value="MedicationStatement.dosage.sequence" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.text">
+      <path value="MedicationStatement.dosage.text" />
+      <definition value="Dosage details" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.dosage.additionalInstruction">
+      <path value="MedicationStatement.dosage.additionalInstruction" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.patientInstruction">
+      <path value="MedicationStatement.dosage.patientInstruction" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.timing">
+      <path value="MedicationStatement.dosage.timing" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.asNeeded[x]">
+      <path value="MedicationStatement.dosage.asNeeded[x]" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.site">
+      <path value="MedicationStatement.dosage.site" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.route">
+      <path value="MedicationStatement.dosage.route" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.method">
+      <path value="MedicationStatement.dosage.method" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.dose[x]">
+      <path value="MedicationStatement.dosage.dose[x]" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.maxDosePerPeriod">
+      <path value="MedicationStatement.dosage.maxDosePerPeriod" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.maxDosePerAdministration:SimpleQuantity">
+      <path value="MedicationStatement.dosage.maxDosePerAdministration" />
+      <sliceName value="SimpleQuantity" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.maxDosePerLifetime:SimpleQuantity">
+      <path value="MedicationStatement.dosage.maxDosePerLifetime" />
+      <sliceName value="SimpleQuantity" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage.rate[x]">
+      <path value="MedicationStatement.dosage.rate[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

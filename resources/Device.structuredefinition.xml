@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Device" />
+  <name value="MedicAlertDevice" />
+  <title value="Medic Alert Device" />
+  <status value="draft" />
+  <date value="2017-07-12T20:51:06.5669748+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Device" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Device" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Device" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Device.identifier">
+      <path value="Device.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Device.udi">
+      <path value="Device.udi" />
+      <max value="0" />
+    </element>
+    <element id="Device.status">
+      <path value="Device.status" />
+      <max value="0" />
+    </element>
+    <element id="Device.type">
+      <path value="Device.type" />
+      <definition value="What type this device is" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="Device.type.coding">
+      <path value="Device.type.coding" />
+      <max value="0" />
+    </element>
+    <element id="Device.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Device.type.text" />
+      <short value="Device type" />
+      <definition value="The type of the device" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="Device.lotNumber">
+      <path value="Device.lotNumber" />
+      <short value="Serial/batch number" />
+      <definition value="Serial/batch number" />
+      <comment value="n/a" />
+    </element>
+    <element id="Device.manufacturer">
+      <path value="Device.manufacturer" />
+      <max value="0" />
+    </element>
+    <element id="Device.manufactureDate">
+      <path value="Device.manufactureDate" />
+      <max value="0" />
+    </element>
+    <element id="Device.expirationDate">
+      <path value="Device.expirationDate" />
+      <max value="0" />
+    </element>
+    <element id="Device.model">
+      <path value="Device.model" />
+      <short value="code for device" />
+      <definition value="The code on the device" />
+      <comment value="todo: not clear this is the correct mapping" />
+    </element>
+    <element id="Device.version">
+      <path value="Device.version" />
+      <max value="0" />
+    </element>
+    <element id="Device.patient">
+      <path value="Device.patient" />
+      <max value="0" />
+    </element>
+    <element id="Device.owner">
+      <path value="Device.owner" />
+      <max value="0" />
+    </element>
+    <element id="Device.contact">
+      <path value="Device.contact" />
+      <max value="0" />
+    </element>
+    <element id="Device.location">
+      <path value="Device.location" />
+      <max value="0" />
+    </element>
+    <element id="Device.url">
+      <path value="Device.url" />
+      <max value="0" />
+    </element>
+    <element id="Device.note">
+      <path value="Device.note" />
+      <max value="0" />
+    </element>
+    <element id="Device.safety">
+      <path value="Device.safety" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

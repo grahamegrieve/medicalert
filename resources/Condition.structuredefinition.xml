@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Condition" />
+  <name value="MedicAlertCondition" />
+  <title value="Medic Alert Condition" />
+  <status value="draft" />
+  <date value="2017-07-11T21:29:51.7098679+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Condition" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition.identifier">
+      <path value="Condition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.clinicalStatus">
+      <path value="Condition.clinicalStatus" />
+      <max value="0" />
+    </element>
+    <element id="Condition.verificationStatus">
+      <path value="Condition.verificationStatus" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category">
+      <path value="Condition.category" />
+      <max value="0" />
+    </element>
+    <element id="Condition.severity">
+      <path value="Condition.severity" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <definition value="Identification of the condition, problem or diagnosis. - text, and maybe a SNOMED CT code" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="Condition.code.coding">
+      <path value="Condition.code.coding" />
+      <definition value="Possible SNOMED CT Code" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="Condition.code.coding.system">
+      <path value="Condition.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="Condition.code.coding.version">
+      <path value="Condition.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code.coding.code">
+      <path value="Condition.code.coding.code" />
+      <definition value="SNOMED CT Code" />
+      <min value="1" />
+    </element>
+    <element id="Condition.code.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Condition.code.coding.display" />
+      <definition value="SNOMED CT Code" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code.coding.userSelected">
+      <path value="Condition.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Condition.code.text" />
+      <min value="1" />
+    </element>
+    <element id="Condition.bodySite">
+      <path value="Condition.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <short value="Medic Alert Member" />
+      <definition value="Medic Alert Member reference" />
+      <comment value="n/a" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
+      </type>
+    </element>
+    <element>
+      <path value="Condition.subject.reference" />
+      <short value="Relative Reference to Medic Alert Member" />
+      <definition value="Medic Alert Member" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Condition.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Condition.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Condition.context">
+      <path value="Condition.context" />
+      <max value="0" />
+    </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.abatement[x]">
+      <path value="Condition.abatement[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.assertedDate">
+      <path value="Condition.assertedDate" />
+      <max value="0" />
+    </element>
+    <element id="Condition.asserter">
+      <path value="Condition.asserter" />
+      <max value="0" />
+    </element>
+    <element id="Condition.stage">
+      <path value="Condition.stage" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence">
+      <path value="Condition.evidence" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note">
+      <path value="Condition.note" />
+      <definition value="Note about the problem" />
+      <comment value="n/a" />
+    </element>
+    <element id="Condition.note.author[x]">
+      <path value="Condition.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note.time">
+      <path value="Condition.note.time" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note.text">
+      <path value="Condition.note.text" />
+      <definition value="Note about the problem" />
+    </element>
+  </differential>
+</StructureDefinition>

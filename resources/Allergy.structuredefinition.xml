@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Allergy" />
+  <name value="MedicAlertAllergy" />
+  <title value="Medic Alert Allergy" />
+  <status value="draft" />
+  <date value="2017-07-11T21:12:03.965677+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Allergy" />
+  <purpose value="Medic Alert Allergy - what a patient records and shares" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="AllergyIntolerance" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="AllergyIntolerance.identifier">
+      <path value="AllergyIntolerance.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus">
+      <path value="AllergyIntolerance.clinicalStatus" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus">
+      <path value="AllergyIntolerance.verificationStatus" />
+      <comment value="FHIR makes this element mandatory, and we must provide a value. We assume that an allergy is confirmed if we've got to the point of listing it in Medic Alert" />
+      <fixedCode value="confirmed" />
+    </element>
+    <element id="AllergyIntolerance.type">
+      <path value="AllergyIntolerance.type" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.category">
+      <path value="AllergyIntolerance.category" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.criticality">
+      <path value="AllergyIntolerance.criticality" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.code">
+      <path value="AllergyIntolerance.code" />
+      <definition value="The description of the member's allergy. Test, and maybe a snomed code" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.code.coding">
+      <path value="AllergyIntolerance.code.coding" />
+      <definition value="Possible SNOMED code" />
+      <comment value="n/a " />
+      <max value="1" />
+    </element>
+    <element id="AllergyIntolerance.code.coding.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <definition value="fixed value for SNOMED CT" />
+      <comment value="n/a" />
+      <min value="1" />
+      <fixedUri value="http://snomed.info/sct" />
+    </element>
+    <element id="AllergyIntolerance.code.coding.version">
+      <path value="AllergyIntolerance.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.code.coding.code">
+      <path value="AllergyIntolerance.code.coding.code" />
+      <definition value="Actual SNOMED CT Code" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.code.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="AllergyIntolerance.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.code.coding.userSelected">
+      <path value="AllergyIntolerance.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="AllergyIntolerance.code.text" />
+      <definition value="Description of the allergy" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.patient">
+      <path value="AllergyIntolerance.patient" />
+      <short value="Medic Alert Member" />
+      <definition value="Medic Alert Member reference" />
+      <comment value="n/a" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
+      </type>
+    </element>
+    <element id="AllergyIntolerance.patient.reference">
+      <path value="AllergyIntolerance.patient.reference" />
+      <short value="Relative Reference to Medic Alert Member" />
+      <definition value="Medic Alert Member" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.patient.identifier">
+      <path value="AllergyIntolerance.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.patient.display">
+      <path value="AllergyIntolerance.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.onset[x]">
+      <path value="AllergyIntolerance.onset[x]" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.assertedDate">
+      <path value="AllergyIntolerance.assertedDate" />
+      <definition value="Date recorded" />
+      <comment value="n/a" />
+    </element>
+    <element id="AllergyIntolerance.recorder">
+      <path value="AllergyIntolerance.recorder" />
+      <definition value="Who noted this (name of member, or the source of the allergy - could be a clinician)" />
+      <comment value="n/a" />
+    </element>
+    <element id="AllergyIntolerance.recorder.reference">
+      <path value="AllergyIntolerance.recorder.reference" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.recorder.identifier">
+      <path value="AllergyIntolerance.recorder.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.recorder.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="AllergyIntolerance.recorder.display" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.asserter">
+      <path value="AllergyIntolerance.asserter" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.lastOccurrence">
+      <path value="AllergyIntolerance.lastOccurrence" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.note">
+      <path value="AllergyIntolerance.note" />
+      <definition value="Additional note about the Allergy" />
+      <comment value="n/a" />
+      <max value="1" />
+    </element>
+    <element id="AllergyIntolerance.note.author[x]">
+      <path value="AllergyIntolerance.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.note.time">
+      <path value="AllergyIntolerance.note.time" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.note.text">
+      <path value="AllergyIntolerance.note.text" />
+      <definition value="Additional note about the allergy" />
+      <comment value="n/a" />
+    </element>
+    <element id="AllergyIntolerance.reaction">
+      <path value="AllergyIntolerance.reaction" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Address" />
+  <name value="MedicalAlertAddress" />
+  <title value="Medical Alert Address" />
+  <status value="draft" />
+  <date value="2017-07-11T20:56:27.728322+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medical Alert Address" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="Address" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Address" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Address.text">
+      <path value="Address.text" />
+      <max value="0" />
+    </element>
+    <element id="Address.use">
+      <path value="Address.use" />
+      <definition value="Address Type" />
+      <min value="1" />
+    </element>
+    <element id="Address.type">
+      <path value="Address.type" />
+      <max value="0" />
+    </element>
+    <element id="Address.line">
+      <path value="Address.line" />
+      <max value="1" />
+    </element>
+    <element id="Address.state">
+      <path value="Address.state" />
+      <comment value="Only used in Australia" />
+    </element>
+    <element id="Address.period">
+      <path value="Address.period" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
