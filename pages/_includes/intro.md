@@ -84,7 +84,7 @@ request.
 
 where id is found on the medic alert bracelet etc. This returns a Patient resource that contains the 
 details available about the patient and their emergency contacts, or a 404 not found error. For further details, 
-see [[Patient Details]]
+see [Member Details](StructureDefinition-Member.html)
 
 # Additional details about the patient
 
@@ -92,14 +92,14 @@ If a patient record is returned, additional information is available about the p
 The following information is potentially available (depending on whether the member has recorded it and made it available):
 
 <table>
- <tr><td>Allergies</td><td><code>GET [base]/AllergyIntolerance?patient=[id] </code></td><td>see [[Allegy Details]]</td></tr>
- <tr><td>Conditions</td><td><code>GET [base]/Condition?patient=[id]</code></td><td>see [[Conditions]]</td></tr>
- <tr><td>Surgical Procedures</td><td><code>GET [base]/Procedure?patient=[id]</code></td><td>see [[Surgical Procedures]]</td></tr>
- <tr><td>Medications</td><td><code>GET [base]/MedicationStatement?patient=[id]</code></td><td>see [[Medications]]</td></tr>
- <tr><td>Devices</td><td><code>GET [base]/DeviceUseStatement?patient=[id]</code></td><td>see [[Devices]]</td></tr>
- <tr><td>Warnings</td><td><code>GET [base]/Flag?patient=[id]</code></td><td>see [[Warnings]]</td></tr>
- <tr><td>Documents</td><td><code>GET [base]/DocumentReference?patient=[id]</code></td><td>see [[Documents]]</td></tr>
- <tr><td>Care Team</td><td><code>GET [base]/CareTeam?patient=[id]</code></td><td>see [[Care Team]]</td></tr>
+ <tr><td>Allergies</td><td><code>GET [base]/AllergyIntolerance?patient=[id] </code></td><td>see <a href="StructureDefinition-Allergy.html">Allergy Details</a></td></tr>
+ <tr><td>Conditions</td><td><code>GET [base]/Condition?patient=[id]</code></td><td>see <a href="StructureDefinition-Condition.html">Conditions</a></td></tr>
+ <tr><td>Surgical Procedures</td><td><code>GET [base]/Procedure?patient=[id]</code></td><td>see <a href="StructureDefinition-Procedure.html">Surgical Procedures</a></td></tr>
+ <tr><td>Medications</td><td><code>GET [base]/MedicationStatement?patient=[id]</code></td><td>see <a href="StructureDefinition-Medication.html">Medications</a></td></tr>
+ <tr><td>Devices</td><td><code>GET [base]/DeviceUseStatement?patient=[id]</code></td><td>see <a href="StructureDefinition-DeviceUse.html">Devices</a></td></tr>
+ <tr><td>Warnings</td><td><code>GET [base]/Flag?patient=[id]</code></td><td>see <a href="StructureDefinition-MedicalWarning.html">Warnings</a></td></tr>
+ <tr><td>Documents</td><td><code>GET [base]/DocumentReference?patient=[id]</code></td><td>see <a href="StructureDefinition-Document.html">Documents</a></td></tr>
+ <tr><td>Doctor List</td><td><code>GET [base]/CareTeam?patient=[id]</code></td><td>see <a href="StructureDefinition-DoctorList.html">Doctor List</a></td></tr>
 </table>
 
 All of these requests return a Bundle - a FHIR resouce that contains 

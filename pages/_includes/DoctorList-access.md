@@ -1,21 +1,13 @@
-# Template-basic-search.md  file
 
-This is the search markdown file that gets inserted into the sd.html Quick Start section for explanation of the search requirements.
+To access a member's doctor list:
 
+~~~~~~~~~~~~
+GET [base]/CareTeam?patient=[id]
+Content-Type: application/fhir+json
+~~~~~~~~~~~~
 
-`GET /Basic?patient={id}`
+The response will be a 200 OK containing a Bundle that contains zero or one 
+CareTeam resources as described below. Note that this resource is different 
+to all the others - the one care team resource lists all the dcotors associated
+with the member
 
-**Example:**
-
-[example here]
-
-*Support:* e.g. Mandatory for client to support search by patient.  Optional for server to support.
-
-*Implementation Notes:*  blah blah blah
-
-*Response Class:*
-
--   (Status 200): successful operation
--   (Status 400): invalid parameter
--   (Status 401/4xx): unauthorized request
--   (Status 403): insufficient scope
