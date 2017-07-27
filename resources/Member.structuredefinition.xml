@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-07-27T17:22:15.429+10:00" />
+  </meta>
   <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
   <name value="MedicAlertMember" />
   <title value="Medic Alert Member" />
@@ -15,6 +18,47 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Patient" />
   <derivation value="constraint" />
   <differential>
+    <element id="Patient">
+      <path value="Patient" />
+      <definition value="Medic Alert Member" />
+    </element>
+    <element id="Patient.id">
+      <path value="Patient.id" />
+      <min value="1" />
+    </element>
+    <element id="Patient.implicitRules">
+      <path value="Patient.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Patient.language">
+      <path value="Patient.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Patient.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Patient.extension:BirthSex">
+      <path value="Patient.extension" />
+      <sliceName value="BirthSex" />
+      <short value="Designated Sex at Birth" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex" />
+      </type>
+    </element>
+    <element id="Patient.modifierExtension">
+      <path value="Patient.modifierExtension" />
+      <max value="0" />
+    </element>
     <element id="Patient.identifier">
       <path value="Patient.identifier" />
       <slicing>
@@ -30,6 +74,10 @@
       <path value="Patient.identifier" />
       <sliceName value="NHINumber" />
       <max value="1" />
+    </element>
+    <element id="Patient.identifier:NHINumber.extension">
+      <path value="Patient.identifier.extension" />
+      <max value="0" />
     </element>
     <element id="Patient.identifier:NHINumber.use">
       <path value="Patient.identifier.use" />
@@ -60,6 +108,10 @@
       <path value="Patient.identifier" />
       <sliceName value="MedicAlertNumber" />
       <max value="1" />
+    </element>
+    <element id="Patient.identifier:MedicAlertNumber.extension">
+      <path value="Patient.identifier.extension" />
+      <max value="0" />
     </element>
     <element id="Patient.identifier:MedicAlertNumber.use">
       <path value="Patient.identifier.use" />
@@ -303,6 +355,9 @@
       </extension>
       <path value="Patient.contact.relationship.text" />
       <min value="1" />
+    </element>
+    <element id="Patient.contact.name">
+      <path value="Patient.contact.name" />
     </element>
     <element id="Patient.contact.name.use">
       <path value="Patient.contact.name.use" />

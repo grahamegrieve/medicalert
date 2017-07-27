@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/BloodGroup" />
+  <name value="MedicAlertBloodGroup" />
+  <title value="Medic Alert Blood Group" />
+  <status value="draft" />
+  <date value="2017-07-11T21:29:51.7098679+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medic Alert Blood Group" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+  <derivation value="constraint" />
+
+  <differential>
+    <element id="Observation.identifier">
+      <path value="Observation.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Observation.basedOn">
+      <path value="Observation.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="Observation.status">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint">
+        <valueString value="default: final" />
+      </extension>
+      <path value="Observation.status" />
+      <short value="This is the current value" />
+      <definition value="Final = this is the current value" />
+      <comment value="n/a" />
+      <fixedCode value="final" />
+    </element>
+    <element id="Observation.category">
+      <path value="Observation.category" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code">
+      <path value="Observation.code" />
+      <short value="LOINC Code that identifies &quot;blood group&quot;" />
+      <definition value="A LOINC code that identifies that this is a blod grup observation " />
+      <comment value="n/a" />
+    </element>
+    <element id="Observation.code.coding">
+      <path value="Observation.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Observation.code.coding.system">
+      <path value="Observation.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Observation.code.coding.version">
+      <path value="Observation.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.coding.code">
+      <path value="Observation.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="883-9" />
+    </element>
+    <element id="Observation.code.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.code.coding.display" />
+      <min value="1" />
+      <fixedString value="ABO Group Bld" />
+    </element>
+    <element id="Observation.code.coding.userSelected">
+      <path value="Observation.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Observation.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Observation.subject">
+      <path value="Observation.subject" />
+      <short value="Medic Alert Member" />
+      <definition value="Medic Alert Member reference" />
+      <comment value="n/a" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
+      </type>
+    </element>
+    <element>
+      <path value="Observation.subject.reference" />
+      <short value="Relative Reference to Medic Alert Member" />
+      <definition value="Medic Alert Member" />
+      <comment value="n/a" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Observation.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Observation.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Observation.context">
+      <path value="Observation.context" />
+      <max value="0" />
+    </element>
+    <element id="Observation.effective[x]">
+      <path value="Observation.effective[x]" />
+      <max value="0" />
+    </element>
+    <element id="Observation.issued">
+      <path value="Observation.issued" />
+      <max value="0" />
+    </element>
+    <element id="Observation.performer">
+      <path value="Observation.performer" />
+      <max value="0" />
+    </element>
+    <element id="Observation.value[x]:valueString">
+      <path value="Observation.valueString" />
+      <sliceName value="valueString" />
+      <short value="Patient's blood group" />
+      <definition value="The patient's blood group as recorded " />
+      <comment value="n/a" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Observation.dataAbsentReason">
+      <path value="Observation.dataAbsentReason" />
+      <max value="0" />
+    </element>
+    <element id="Observation.interpretation">
+      <path value="Observation.interpretation" />
+      <max value="0" />
+    </element>
+    <element id="Observation.comment">
+      <path value="Observation.comment" />
+      <max value="0" />
+    </element>
+    <element id="Observation.bodySite">
+      <path value="Observation.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Observation.method">
+      <path value="Observation.method" />
+      <max value="0" />
+    </element>
+    <element id="Observation.specimen">
+      <path value="Observation.specimen" />
+      <max value="0" />
+    </element>
+    <element id="Observation.device">
+      <path value="Observation.device" />
+      <max value="0" />
+    </element>
+    <element id="Observation.referenceRange">
+      <path value="Observation.referenceRange" />
+      <max value="0" />
+    </element>
+    <element id="Observation.related">
+      <path value="Observation.related" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
