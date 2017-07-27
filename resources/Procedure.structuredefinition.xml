@@ -14,7 +14,58 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Procedure" />
   <derivation value="constraint" />
   <differential>
-    <element id="Procedure.identifier">
+    <element id="Procedure">
+      <path value="Procedure" />
+    </element>
+    <element id="Procedure.id">
+      <path value="Procedure.id" />
+      <short value="Resource Id"/>
+      <min value="1" />
+    </element>
+    <!-- no meta (e.g. last updated) -->
+    <element id="Procedure.meta" >
+      <path value="Procedure.meta" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.implicitRules">
+      <path value="Procedure.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.language">
+      <path value="Procedure.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Procedure.text" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Procedure.text.extension" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Procedure.text.status" />
+      <min value="1" />
+      <fixedCode value="generated"/>
+    </element>
+    <element>
+      <path value="Procedure.text.div" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.contained">
+      <path value="Procedure.contained" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.extension">
+      <path value="Procedure.extension" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.modifierExtension">
+      <path value="Procedure.modifierExtension" />
+      <max value="0" />
+    </element>
+
+  <element id="Procedure.identifier">
       <path value="Procedure.identifier" />
       <max value="0" />
     </element>
@@ -54,6 +105,10 @@
       <comment value="n/a" />
       <min value="1" />
     </element>
+    <element id="Procedure.code.extension">
+      <path value="Procedure.code.extension" />
+      <max value="0" />
+    </element>
     <element id="Procedure.code.coding">
       <path value="Procedure.code.coding" />
       <max value="0" />
@@ -76,6 +131,10 @@
         <code value="Reference" />
         <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
       </type>
+    </element>
+    <element id="Procedure.subject.extension">
+      <path value="Procedure.subject.extension" />
+      <max value="0" />
     </element>
     <element>
       <path value="Procedure.subject.reference" />
@@ -115,6 +174,10 @@
       <path value="Procedure.performer.role" />
       <max value="0" />
     </element>
+    <element id="Procedure.performer.extension">
+      <path value="Procedure.performer.extension" />
+      <max value="0" />
+    </element>
     <element id="Procedure.performer.actor">
       <path value="Procedure.performer.actor" />
       <definition value="Description of who performed the procedure" />
@@ -123,6 +186,10 @@
         <code value="Reference" />
         <targetProfile value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
       </type>
+    </element>
+    <element id="Procedure.performer.actor.extension">
+      <path value="Procedure.performer.actor.extension" />
+      <max value="0" />
     </element>
     <element>
       <path value="Procedure.performer.actor.reference" />
@@ -182,9 +249,14 @@
     </element>
     <element id="Procedure.note">
       <path value="Procedure.note" />
+      <short value="Note about the procedure" />
       <definition value="Note about the procedure" />
       <comment value="n/a" />
       <max value="1" />
+    </element>
+    <element id="Procedure.note.extension">
+      <path value="Procedure.note.extension" />
+      <max value="0" />
     </element>
     <element id="Procedure.note.author[x]">
       <path value="Procedure.note.author[x]" />
@@ -196,23 +268,24 @@
     </element>
     <element id="Procedure.note.text">
       <path value="Procedure.note.text" />
-      <definition value="Note about the procedure" />
+      <definition value="Text Note" />
+      <definition value="Text Note about the procedure" />
       <comment value="n/a" />
     </element>
     <element id="Procedure.focalDevice">
       <path value="Procedure.focalDevice" />
-      <min value="1" />
-      <max value="1" />
+      <min value="0" />
+      <max value="0" />
     </element>
     <element id="Procedure.usedReference">
       <path value="Procedure.usedReference" />
-      <min value="1" />
-      <max value="1" />
+      <min value="0" />
+      <max value="0" />
     </element>
     <element id="Procedure.usedCode">
       <path value="Procedure.usedCode" />
-      <min value="1" />
-      <max value="1" />
+      <min value="0" />
+      <max value="0" />
     </element>
   </differential>
 </StructureDefinition>

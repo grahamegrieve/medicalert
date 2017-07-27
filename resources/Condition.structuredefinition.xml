@@ -14,6 +14,56 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
   <derivation value="constraint" />
   <differential>
+    <element id="Condition">
+      <path value="Condition" />
+    </element>
+    <element id="Condition.id">
+      <path value="Condition.id" />
+      <short value="Resource Id"/>
+      <min value="1" />
+    </element>
+    <!-- no meta (e.g. last updated) -->
+    <element id="Condition.meta" >
+      <path value="Condition.meta" />
+      <max value="0" />
+    </element>
+    <element id="Condition.implicitRules">
+      <path value="Condition.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Condition.language">
+      <path value="Condition.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Condition.text" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Condition.text.extension" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Condition.text.status" />
+      <min value="1" />
+      <fixedCode value="generated"/>
+    </element>
+    <element>
+      <path value="Condition.text.div" />
+      <min value="1" />
+    </element>
+    <element id="Condition.contained">
+      <path value="Condition.contained" />
+      <max value="0" />
+    </element>
+    <element id="Condition.extension">
+      <path value="Condition.extension" />
+      <max value="0" />
+    </element>
+    <element id="Condition.modifierExtension">
+      <path value="Condition.modifierExtension" />
+      <max value="0" />
+    </element>
     <element id="Condition.identifier">
       <path value="Condition.identifier" />
       <max value="0" />
@@ -36,15 +86,25 @@
     </element>
     <element id="Condition.code">
       <path value="Condition.code" />
+      <short value="Condition | Problem |  Diagnosis. Text, possibly a Snomed CT code" />
       <definition value="Identification of the condition, problem or diagnosis. - text, and maybe a SNOMED CT code" />
       <comment value="n/a" />
       <min value="1" />
     </element>
+    <element id="Condition.code.extension">
+      <path value="Condition.code.extension" />
+      <max value="0" />
+    </element>
     <element id="Condition.code.coding">
       <path value="Condition.code.coding" />
+      <short value="Possible SNOMED CT Code" />
       <definition value="Possible SNOMED CT Code" />
       <comment value="n/a" />
       <max value="1" />
+    </element>
+    <element id="Condition.code.coding.extension">
+      <path value="Condition.code.coding.extension" />
+      <max value="0" />
     </element>
     <element id="Condition.code.coding.system">
       <path value="Condition.code.coding.system" />
@@ -57,6 +117,7 @@
     </element>
     <element id="Condition.code.coding.code">
       <path value="Condition.code.coding.code" />
+      <short value="SNOMED CT Code" />
       <definition value="SNOMED CT Code" />
       <min value="1" />
     </element>
@@ -93,6 +154,10 @@
         <code value="Reference" />
         <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
       </type>
+    </element>
+    <element id="Condition.subject.extension">
+      <path value="Condition.subject.extension" />
+      <max value="0" />
     </element>
     <element>
       <path value="Condition.subject.reference" />
@@ -139,8 +204,13 @@
     </element>
     <element id="Condition.note">
       <path value="Condition.note" />
+      <short value="Note about the problem" />
       <definition value="Note about the problem" />
       <comment value="n/a" />
+    </element>
+    <element id="Condition.note.extension">
+      <path value="Condition.note.extension" />
+      <max value="0" />
     </element>
     <element id="Condition.note.author[x]">
       <path value="Condition.note.author[x]" />
@@ -152,6 +222,7 @@
     </element>
     <element id="Condition.note.text">
       <path value="Condition.note.text" />
+      <short value="text for Note" />
       <definition value="Note about the problem" />
     </element>
   </differential>

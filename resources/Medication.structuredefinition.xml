@@ -14,6 +14,57 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
   <derivation value="constraint" />
   <differential>
+    <element id="MedicationStatement">
+      <path value="MedicationStatement" />
+    </element>
+    <element id="MedicationStatement.id">
+      <path value="MedicationStatement.id" />
+      <short value="Resource Id"/>
+      <min value="1" />
+    </element>
+    <!-- no meta (e.g. last updated) -->
+    <element id="MedicationStatement.meta" >
+      <path value="MedicationStatement.meta" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.implicitRules">
+      <path value="MedicationStatement.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.language">
+      <path value="MedicationStatement.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="MedicationStatement.text" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="MedicationStatement.text.extension" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="MedicationStatement.text.status" />
+      <min value="1" />
+      <fixedCode value="generated"/>
+    </element>
+    <element>
+      <path value="MedicationStatement.text.div" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.contained">
+      <path value="MedicationStatement.contained" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.extension">
+      <path value="MedicationStatement.extension" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.modifierExtension">
+      <path value="MedicationStatement.modifierExtension" />
+      <max value="0" />
+    </element>
+
     <element id="MedicationStatement.identifier">
       <path value="MedicationStatement.identifier" />
       <max value="0" />
@@ -58,11 +109,16 @@
     <element id="MedicationStatement.medication[x]:medicationCodeableConcept">
       <path value="MedicationStatement.medicationCodeableConcept" />
       <sliceName value="medicationCodeableConcept" />
+      <short value="Medication Details - Text, and possibly SNOMED CT / MIMS codes" />
       <definition value="Details about the medication. Text, and possibly one or two codes: SNOMED CT, and MIMS" />
       <comment value="n/a" />
       <type>
         <code value="CodeableConcept" />
       </type>
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.extension">
+      <path value="MedicationStatement.medicationCodeableConcept.extension" />
+      <max value="0" />
     </element>
     <element>
       <path value="MedicationStatement.medicationCodeableConcept.coding" />
@@ -73,15 +129,20 @@
         </discriminator>
         <rules value="open" />
       </slicing>
-      <definition value="maybe a snomed code or a MIMS code" />
+      <definition value="Maybe a snomed code or a MIMS code" />
       <max value="2" />
     </element>
     <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode">
       <path value="MedicationStatement.medicationCodeableConcept.coding" />
       <sliceName value="SnomedCode" />
+      <short value="Possible SNOMED CT code for the medication" />
       <definition value="SNOMED CT  code for the medication" />
       <comment value="n/a" />
       <max value="1" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode.extension">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.extension" />
+      <max value="0" />
     </element>
     <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode.system">
       <path value="MedicationStatement.medicationCodeableConcept.coding.system" />
@@ -96,7 +157,7 @@
     </element>
     <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:SnomedCode.code">
       <path value="MedicationStatement.medicationCodeableConcept.coding.code" />
-      <definition value="Snomed CT code - maybe AMT code" />
+      <definition value="Snomed CT code (AMT code)" />
       <comment value="n/a" />
       <min value="1" />
     </element>
@@ -114,9 +175,14 @@
     <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode">
       <path value="MedicationStatement.medicationCodeableConcept.coding" />
       <sliceName value="MimsCode" />
+      <short value="Possible MIMS code for the medication" />
       <definition value="MIMS Code" />
       <comment value="n/a" />
       <max value="1" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode.extension">
+      <path value="MedicationStatement.medicationCodeableConcept.coding.extension" />
+      <max value="0" />
     </element>
     <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode.system">
       <path value="MedicationStatement.medicationCodeableConcept.coding.system" />
@@ -131,6 +197,7 @@
     </element>
     <element id="MedicationStatement.medication[x]:medicationCodeableConcept.coding:MimsCode.code">
       <path value="MedicationStatement.medicationCodeableConcept.coding.code" />
+      <short value="MIMS Code" />
       <definition value="MIMS Code" />
       <comment value="n/.a" />
       <min value="1" />
@@ -151,6 +218,7 @@
         <valueBoolean value="true" />
       </extension>
       <path value="MedicationStatement.medicationCodeableConcept.text" />
+      <short value="Description of the medication" />
       <definition value="Description of the medication" />
       <comment value="n/a" />
       <min value="1" />
@@ -178,6 +246,10 @@
         <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
       </type>
     </element>
+    <element id="MedicationStatement.subject.extension">
+      <path value="MedicationStatement.subject.extension" />
+      <max value="0" />
+    </element>
     <element>
       <path value="MedicationStatement.subject.reference" />
       <short value="Relative Reference to Medic Alert Member" />
@@ -195,9 +267,14 @@
     </element>
     <element id="MedicationStatement.derivedFrom">
       <path value="MedicationStatement.derivedFrom" />
+      <short value="Details about the original prescription" />
       <definition value="Details about the original prescription" />
       <comment value="n/a" />
       <max value="1" />
+    </element>
+    <element id="MedicationStatement.derivedFrom.extension">
+      <path value="MedicationStatement.derivedFrom.extension" />
+      <max value="0" />
     </element>
     <element id="MedicationStatement.derivedFrom.reference">
       <path value="MedicationStatement.derivedFrom.reference" />
@@ -212,6 +289,7 @@
         <valueBoolean value="true" />
       </extension>
       <path value="MedicationStatement.derivedFrom.display" />
+      <short value="Details about the original prescription" />
       <definition value="Details about the original prescription" />
       <comment value="n/a" />
       <min value="1" />
@@ -236,9 +314,14 @@
     </element>
     <element id="MedicationStatement.note">
       <path value="MedicationStatement.note" />
+      <short value="Medication Notes" />
       <definition value="Medication Notes" />
       <comment value="n/a" />
       <max value="1" />
+    </element>
+    <element id="MedicationStatement.note.extension">
+      <path value="MedicationStatement.note.extension" />
+      <max value="0" />
     </element>
     <element id="MedicationStatement.note.author[x]">
       <path value="MedicationStatement.note.author[x]" />
@@ -250,6 +333,7 @@
     </element>
     <element id="MedicationStatement.note.text">
       <path value="MedicationStatement.note.text" />
+      <short value="Text for Medication Note" />
       <definition value="Medication Notes" />
       <comment value="n/a" />
     </element>
@@ -259,12 +343,17 @@
       <comment value="n/a" />
       <max value="1" />
     </element>
+    <element id="MedicationStatement.dosage.extension">
+      <path value="MedicationStatement.dosage.extension" />
+      <max value="0" />
+    </element>
     <element id="MedicationStatement.dosage.sequence">
       <path value="MedicationStatement.dosage.sequence" />
       <max value="0" />
     </element>
     <element id="MedicationStatement.dosage.text">
       <path value="MedicationStatement.dosage.text" />
+      <short value="Dosage details" />
       <definition value="Dosage details" />
       <comment value="n/a" />
       <min value="1" />

@@ -20,7 +20,8 @@
   <differential>
     <element id="Patient">
       <path value="Patient" />
-      <definition value="Medic Alert Member" />
+      <short value="Medic Alert Member Id"/>
+      <definition value="Medic Alert Member Id" />
     </element>
     <element id="Patient.id">
       <path value="Patient.id" />
@@ -99,6 +100,7 @@
     <element id="Patient.identifier:NHINumber">
       <path value="Patient.identifier" />
       <sliceName value="NHINumber" />
+      <short value="NHI Number"/>
       <max value="1" />
     </element>
     <element id="Patient.identifier:NHINumber.extension">
@@ -133,6 +135,7 @@
     <element id="Patient.identifier:MedicAlertNumber">
       <path value="Patient.identifier" />
       <sliceName value="MedicAlertNumber" />
+      <short value="Medic Alert Identifier"/>
       <max value="1" />
     </element>
     <element id="Patient.identifier:MedicAlertNumber.extension">
@@ -183,7 +186,7 @@
     <element id="Patient.name:PatientName">
       <path value="Patient.name" />
       <sliceName value="PatientName" />
-      <short value="The Patient's proper name" />
+      <short value="The Members's proper name" />
       <min value="1" />
       <max value="1" />
     </element>
@@ -193,7 +196,7 @@
     </element>
     <element id="Patient.name:PatientName.use">
       <path value="Patient.name.use" />
-      <short value="official = Patient's proper name" />
+      <short value="official = Member's proper name" />
       <min value="1" />
       <fixedCode value="official" />
     </element>
@@ -224,6 +227,7 @@
     <element id="Patient.name:NickName">
       <path value="Patient.name" />
       <sliceName value="NickName" />
+      <short value="Preferred name for the member"/>
       <max value="1" />
     </element>
     <element id="Patient.name:NickName.extension">
@@ -279,6 +283,7 @@
     <element id="Patient.telecom:HomePhone">
       <path value="Patient.telecom" />
       <sliceName value="HomePhone" />
+      <short value="Member's home phone number"/>
       <max value="1" />
     </element>
     <element id="Patient.telecom:HomePhone.extension">
@@ -310,6 +315,7 @@
     <element id="Patient.telecom:MobilePhone">
       <path value="Patient.telecom" />
       <sliceName value="MobilePhone" />
+      <short value="Member's mobile number"/>
       <max value="1" />
     </element>
     <element id="Patient.telecom:MobilePhone.extension">
@@ -341,6 +347,7 @@
     <element id="Patient.telecom:Email">
       <path value="Patient.telecom" />
       <sliceName value="Email" />
+      <short value="Member's Email Address"/>
       <max value="1" />
     </element>
     <element id="Patient.telecom:Email.extension">
@@ -453,6 +460,7 @@
       <path value="Patient.contact.name.period" />
       <max value="0" />
     </element>
+
     <element id="Patient.contact.telecom">
       <path value="Patient.contact.telecom" />
       <slicing>
@@ -466,10 +474,17 @@
         </discriminator>
         <rules value="closed" />
       </slicing>
+      <max value="3" />
     </element>
     <element id="Patient.contact.telecom:HomePhone">
       <path value="Patient.contact.telecom" />
       <sliceName value="HomePhone" />
+      <short value="Contact's home phone number"/>
+      <max value="1" />
+    </element>
+    <element id="Patient.contact.telecom:HomePhone.extension">
+      <path value="Patient.contact.telecom.extension" />
+      <max value="0" />
     </element>
     <element id="Patient.contact.telecom:HomePhone.system">
       <path value="Patient.contact.telecom.system" />
@@ -496,6 +511,12 @@
     <element id="Patient.contact.telecom:MobilePhone">
       <path value="Patient.contact.telecom" />
       <sliceName value="MobilePhone" />
+      <short value="Contact's mobile number"/>
+      <max value="1" />
+    </element>
+    <element id="Patient.contact.telecom:MobilePhone.extension">
+      <path value="Patient.contact.telecom.extension" />
+      <max value="0" />
     </element>
     <element id="Patient.contact.telecom:MobilePhone.system">
       <path value="Patient.contact.telecom.system" />
@@ -522,6 +543,12 @@
     <element id="Patient.contact.telecom:Email">
       <path value="Patient.contact.telecom" />
       <sliceName value="Email" />
+      <short value="Contact's Email Address"/>
+      <max value="1" />
+    </element>
+    <element id="Patient.contact.telecom:Email.extension">
+      <path value="Patient.contact.telecom.extension" />
+      <max value="0" />
     </element>
     <element id="Patient.contact.telecom:Email.system">
       <path value="Patient.contact.telecom.system" />
@@ -544,6 +571,7 @@
       <path value="Patient.contact.telecom.period" />
       <max value="0" />
     </element>
+
     <element id="Patient.contact.address">
       <path value="Patient.contact.address" />
       <short value="Standard Medic Alert Address"/>
