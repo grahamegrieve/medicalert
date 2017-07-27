@@ -14,6 +14,20 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Address" />
   <derivation value="constraint" />
   <differential>
+    <element id="Address">
+      <path value="Address" />
+    </element>
+    <element id="Address.extension">
+<!--      <slicing> 
+        <discriminator> 
+          <type value="value"/> 
+          <path value="url"/> 
+        </discriminator> 
+        <rules value="open"/> 
+      </slicing> -->
+      <path value="Address.extension" />
+      <max value="0" />
+    </element>
     <element id="Address.text">
       <path value="Address.text" />
       <max value="0" />

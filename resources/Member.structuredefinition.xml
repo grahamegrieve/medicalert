@@ -26,12 +26,38 @@
       <path value="Patient.id" />
       <min value="1" />
     </element>
+    <!-- no meta (e.g. last updated) -->
+    <element>
+      <path value="Patient.meta" />
+      <max value="0" />
+    </element>
     <element id="Patient.implicitRules">
       <path value="Patient.implicitRules" />
       <max value="0" />
     </element>
     <element id="Patient.language">
       <path value="Patient.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Patient.text" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Patient.text.extension" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Patient.text.status" />
+      <min value="1" />
+      <fixedCode value="generated"/>
+    </element>
+    <element>
+      <path value="Patient.text.div" />
+      <min value="1" />
+    </element>
+    <element id="Patient.contained">
+      <path value="Patient.contained" />
       <max value="0" />
     </element>
     <element>
@@ -66,7 +92,7 @@
           <type value="value" />
           <path value="system" />
         </discriminator>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
       <max value="2" />
     </element>
@@ -150,18 +176,24 @@
           <type value="value" />
           <path value="use" />
         </discriminator>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
       <max value="2" />
     </element>
     <element id="Patient.name:PatientName">
       <path value="Patient.name" />
       <sliceName value="PatientName" />
+      <short value="The Patient's proper name" />
+      <min value="1" />
       <max value="1" />
+    </element>
+    <element id="Patient.name:PatientName.extension">
+      <path value="Patient.name.extension" />
+      <max value="0" />
     </element>
     <element id="Patient.name:PatientName.use">
       <path value="Patient.name.use" />
-      <short value="usual | officfficialial | temp | nickname | anonymous | old | maiden" />
+      <short value="official = Patient's proper name" />
       <min value="1" />
       <fixedCode value="official" />
     </element>
@@ -194,8 +226,13 @@
       <sliceName value="NickName" />
       <max value="1" />
     </element>
+    <element id="Patient.name:NickName.extension">
+      <path value="Patient.name.extension" />
+      <max value="0" />
+    </element>
     <element id="Patient.name:NickName.use">
       <path value="Patient.name.use" />
+      <short value="nickname = Patient's common name" />
       <fixedCode value="nickname" />
     </element>
     <element id="Patient.name:NickName.text">
@@ -208,6 +245,7 @@
     </element>
     <element id="Patient.name:NickName.given">
       <path value="Patient.name.given" />
+      <short value="The Patient's common name" />
       <min value="1" />
       <max value="1" />
     </element>
@@ -234,7 +272,7 @@
           <type value="value" />
           <path value="use" />
         </discriminator>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
       <max value="3" />
     </element>
@@ -242,6 +280,10 @@
       <path value="Patient.telecom" />
       <sliceName value="HomePhone" />
       <max value="1" />
+    </element>
+    <element id="Patient.telecom:HomePhone.extension">
+      <path value="Patient.telecom.extension" />
+      <max value="0" />
     </element>
     <element id="Patient.telecom:HomePhone.system">
       <path value="Patient.telecom.system" />
@@ -270,6 +312,10 @@
       <sliceName value="MobilePhone" />
       <max value="1" />
     </element>
+    <element id="Patient.telecom:MobilePhone.extension">
+      <path value="Patient.telecom.extension" />
+      <max value="0" />
+    </element>
     <element id="Patient.telecom:MobilePhone.system">
       <path value="Patient.telecom.system" />
       <min value="1" />
@@ -296,6 +342,10 @@
       <path value="Patient.telecom" />
       <sliceName value="Email" />
       <max value="1" />
+    </element>
+    <element id="Patient.telecom:Email.extension">
+      <path value="Patient.telecom.extension" />
+      <max value="0" />
     </element>
     <element id="Patient.telecom:Email.system">
       <path value="Patient.telecom.system" />
@@ -324,6 +374,7 @@
     </element>
     <element id="Patient.address">
       <path value="Patient.address" />
+      <short value="Standard Medic Alert Address"/>
       <type>
         <code value="Address" />
         <profile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Address" />
@@ -340,6 +391,17 @@
     <element id="Patient.photo">
       <path value="Patient.photo" />
       <max value="1" />
+    </element>
+    <element id="Patient.contact">
+      <path value="Patient.contact" />
+    </element>
+    <element id="Patient.contact.extension">
+      <path value="Patient.contact.extension" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact.modifierExtension">
+      <path value="Patient.contact.modifierExtension" />
+      <max value="0" />
     </element>
     <element id="Patient.contact.relationship">
       <path value="Patient.contact.relationship" />
@@ -358,6 +420,10 @@
     </element>
     <element id="Patient.contact.name">
       <path value="Patient.contact.name" />
+    </element>
+    <element id="Patient.contact.name.extension">
+      <path value="Patient.contact.name.extension" />
+      <max value="0" />
     </element>
     <element id="Patient.contact.name.use">
       <path value="Patient.contact.name.use" />
@@ -398,7 +464,7 @@
           <type value="value" />
           <path value="use" />
         </discriminator>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
     </element>
     <element id="Patient.contact.telecom:HomePhone">
@@ -480,6 +546,7 @@
     </element>
     <element id="Patient.contact.address">
       <path value="Patient.contact.address" />
+      <short value="Standard Medic Alert Address"/>
       <type>
         <code value="Address" />
         <profile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Address" />
