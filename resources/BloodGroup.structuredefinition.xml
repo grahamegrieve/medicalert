@@ -15,6 +15,57 @@
   <derivation value="constraint" />
 
   <differential>
+    <element id="Observation">
+      <path value="Observation" />
+    </element>
+    <element id="Observation.id">
+      <path value="Observation.id" />
+      <short value="Resource Id"/>
+      <min value="1" />
+    </element>
+    <!-- no meta (e.g. last updated) -->
+    <element id="Observation.meta" >
+      <path value="Observation.meta" />
+      <max value="0" />
+    </element>
+    <element id="Observation.implicitRules">
+      <path value="Observation.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Observation.language">
+      <path value="Observation.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Observation.text" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Observation.text.extension" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Observation.text.status" />
+      <min value="1" />
+      <fixedCode value="generated"/>
+    </element>
+    <element>
+      <path value="Observation.text.div" />
+      <min value="1" />
+    </element>
+    <element id="Observation.contained">
+      <path value="Observation.contained" />
+      <max value="0" />
+    </element>
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <max value="0" />
+    </element>
+    <element id="Observation.modifierExtension">
+      <path value="Observation.modifierExtension" />
+      <max value="0" />
+    </element>
+
     <element id="Observation.identifier">
       <path value="Observation.identifier" />
       <max value="0" />
@@ -43,10 +94,18 @@
       <definition value="A LOINC code that identifies that this is a blod grup observation " />
       <comment value="n/a" />
     </element>
+    <element id="Observation.code.extension">
+      <path value="Observation.code.extension" />
+      <max value="0" />
+    </element>
     <element id="Observation.code.coding">
       <path value="Observation.code.coding" />
       <min value="1" />
       <max value="1" />
+    </element>
+    <element id="Observation.code.coding.extension">
+      <path value="Observation.code.coding.extension" />
+      <max value="0" />
     </element>
     <element id="Observation.code.coding.system">
       <path value="Observation.code.coding.system" />
@@ -91,6 +150,10 @@
         <code value="Reference" />
         <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
       </type>
+    </element>
+    <element id="Observation.subject.extension">
+      <path value="Observation.subject.extension" />
+      <max value="0" />
     </element>
     <element>
       <path value="Observation.subject.reference" />

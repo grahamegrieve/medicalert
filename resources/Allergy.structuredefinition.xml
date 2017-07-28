@@ -61,6 +61,10 @@
       <path value="AllergyIntolerance.extension" />
       <max value="0" />
     </element>
+    <element id="AllergyIntolerance.modifierExtension">
+      <path value="AllergyIntolerance.modifierExtension" />
+      <max value="0" />
+    </element>
     <element id="AllergyIntolerance.identifier">
       <path value="AllergyIntolerance.identifier" />
       <max value="0" />

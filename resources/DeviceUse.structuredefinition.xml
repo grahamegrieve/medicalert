@@ -14,6 +14,62 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/DeviceUseStatement" />
   <derivation value="constraint" />
   <differential>
+    <element id="DeviceUseStatement">
+      <path value="DeviceUseStatement" />
+    </element>
+    <element id="DeviceUseStatement.id">
+      <path value="DeviceUseStatement.id" />
+      <short value="Resource Id"/>
+      <min value="1" />
+    </element>
+    <!-- no meta (e.g. last updated) -->
+    <element id="DeviceUseStatement.meta" >
+      <path value="DeviceUseStatement.meta" />
+      <max value="0" />
+    </element>
+    <element id="DeviceUseStatement.implicitRules">
+      <path value="DeviceUseStatement.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="DeviceUseStatement.language">
+      <path value="DeviceUseStatement.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="DeviceUseStatement.text" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="DeviceUseStatement.text.extension" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="DeviceUseStatement.text.status" />
+      <min value="1" />
+      <fixedCode value="generated"/>
+    </element>
+    <element>
+      <path value="DeviceUseStatement.text.div" />
+      <min value="1" />
+    </element>
+    <element id="DeviceUseStatement.contained">
+      <path value="DeviceUseStatement.contained" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Resource"/>
+        <profile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Device"/>
+      </type>
+    </element>
+    <element id="DeviceUseStatement.extension">
+      <path value="DeviceUseStatement.extension" />
+      <max value="0" />
+    </element>
+    <element id="DeviceUseStatement.modifierExtension">
+      <path value="DeviceUseStatement.modifierExtension" />
+      <max value="0" />
+    </element>
+
     <element id="DeviceUseStatement.identifier">
       <path value="DeviceUseStatement.identifier" />
       <max value="0" />
@@ -36,6 +92,10 @@
       </type>
     </element>
     <element>
+      <path value="DeviceUseStatement.subject.extension" />
+      <max value="0" />
+    </element>
+    <element>
       <path value="DeviceUseStatement.subject.reference" />
       <short value="Relative Reference to Medic Alert Member" />
       <definition value="Medic Alert Member" />
@@ -54,6 +114,10 @@
       <path value="DeviceUseStatement.whenUsed" />
       <comment value="n/a" />
       <min value="1" />
+    </element>
+    <element id="DeviceUseStatement.whenUsed.extension">
+      <path value="DeviceUseStatement.whenUsed.extension" />
+      <max value="0" />
     </element>
     <element id="DeviceUseStatement.whenUsed.start">
       <path value="DeviceUseStatement.whenUsed.start" />
@@ -87,8 +151,12 @@
       </type>
     </element>
     <element>
+      <path value="DeviceUseStatement.device.extension" />
+      <max value="0" />
+    </element>
+    <element>
       <path value="DeviceUseStatement.device.reference" />
-      <short value="Contained reference" />
+      <short value="Reference to contained above (starts with #)" />
       <definition value="Contained reference" />
       <comment value="n/a" />
       <min value="1" />

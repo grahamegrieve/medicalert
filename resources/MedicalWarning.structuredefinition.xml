@@ -18,6 +18,54 @@
       <path value="Flag" />
       <short value="Medical Warning" />
     </element>
+    <element id="Flag.id">
+      <path value="Flag.id" />
+      <short value="Resource Id"/>
+      <min value="1" />
+    </element>
+    <!-- no meta (e.g. last updated) -->
+    <element id="Flag.meta" >
+      <path value="Flag.meta" />
+      <max value="0" />
+    </element>
+    <element id="Flag.implicitRules">
+      <path value="Flag.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Flag.language">
+      <path value="Flag.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Flag.text" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Flag.text.extension" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Flag.text.status" />
+      <min value="1" />
+      <fixedCode value="generated"/>
+    </element>
+    <element>
+      <path value="Flag.text.div" />
+      <min value="1" />
+    </element>
+    <element id="Flag.contained">
+      <path value="Flag.contained" />
+      <max value="0" />
+    </element>
+    <element id="Flag.extension">
+      <path value="Flag.extension" />
+      <max value="0" />
+    </element>
+    <element id="Flag.modifierExtension">
+      <path value="Flag.modifierExtension" />
+      <max value="0" />
+    </element>
+    
     <element id="Flag.identifier">
       <path value="Flag.identifier" />
       <max value="0" />
@@ -32,6 +80,11 @@
     </element>
     <element id="Flag.code">
       <path value="Flag.code" />
+      <short value="Details of the Medical Warning" />
+    </element>
+    <element>
+      <path value="Flag.code.extension" />
+      <max value="0" />
     </element>
     <element id="Flag.code.coding">
       <path value="Flag.code.coding" />
@@ -42,7 +95,7 @@
         <valueBoolean value="true" />
       </extension>
       <path value="Flag.code.text" />
-      <short value="Details of the alert" />
+      <short value="Text Description of the warning" />
       <definition value="Details of the alert" />
       <comment value="n/a" />
       <min value="1" />
@@ -57,6 +110,10 @@
         <code value="Reference" />
         <targetProfile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Member" />
       </type>
+    </element>
+    <element>
+      <path value="Flag.subject.extension" />
+      <max value="0" />
     </element>
     <element>
       <path value="Flag.subject.reference" />

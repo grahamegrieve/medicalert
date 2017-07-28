@@ -93,7 +93,7 @@ The following information is potentially available (depending on whether the mem
 
 <table>
  <tr><td>Allergies</td><td><code>GET [base]/AllergyIntolerance?patient=[id] </code></td><td>see <a href="StructureDefinition-Allergy.html">Allergy Details</a></td></tr>
- <tr><td>Obsevations</td><td><code>GET [base]/Observation?patient=[id] </code></td><td>see <a href="StructureDefinition-Observation.html">Patient's Blood group</a></td></tr>
+ <tr><td>Obsevations</td><td><code>GET [base]/Observation?patient=[id] </code></td><td>see <a href="StructureDefinition-BloodGroup.html">Patient's Blood group</a></td></tr>
  <tr><td>Conditions</td><td><code>GET [base]/Condition?patient=[id]</code></td><td>see <a href="StructureDefinition-Condition.html">Conditions</a></td></tr>
  <tr><td>Surgical Procedures</td><td><code>GET [base]/Procedure?patient=[id]</code></td><td>see <a href="StructureDefinition-Procedure.html">Surgical Procedures</a></td></tr>
  <tr><td>Medications</td><td><code>GET [base]/MedicationStatement?patient=[id]</code></td><td>see <a href="StructureDefinition-Medication.html">Medications</a></td></tr>
@@ -103,7 +103,7 @@ The following information is potentially available (depending on whether the mem
  <tr><td>Doctor List</td><td><code>GET [base]/CareTeam?patient=[id]</code></td><td>see <a href="StructureDefinition-DoctorList.html">Doctor List</a></td></tr>
 </table>
 
-All of these requests return a Bundle - a FHIR resouce that contains 
+All of these requests return a Bundle - a FHIR resource that contains 
 other resources. e.g. a list of resources of the described kind. If
 an empty bundle is returned, the member has not recorded any relevant
 information, or decided not to share it.

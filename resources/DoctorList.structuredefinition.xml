@@ -14,6 +14,62 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CareTeam" />
   <derivation value="constraint" />
   <differential>
+    <element id="CareTeam">
+      <path value="CareTeam" />
+    </element>
+    <element id="CareTeam.id">
+      <path value="CareTeam.id" />
+      <short value="Resource Id"/>
+      <min value="1" />
+    </element>
+    <!-- no meta (e.g. last updated) -->
+    <element id="CareTeam.meta" >
+      <path value="CareTeam.meta" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.implicitRules">
+      <path value="CareTeam.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.language">
+      <path value="CareTeam.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="CareTeam.text" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="CareTeam.text.extension" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="CareTeam.text.status" />
+      <min value="1" />
+      <fixedCode value="generated"/>
+    </element>
+    <element>
+      <path value="CareTeam.text.div" />
+      <min value="1" />
+    </element>
+    <element id="CareTeam.contained">
+      <path value="CareTeam.contained" />
+      <min value="1" />
+      <max value="*" />
+      <type>
+        <code value="Resource"/>
+        <profile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/Doctor"/>        
+      </type>
+    </element>
+    <element id="CareTeam.extension">
+      <path value="CareTeam.extension" />
+      <max value="0" />
+    </element>
+    <element id="CareTeam.modifierExtension">
+      <path value="CareTeam.modifierExtension" />
+      <max value="0" />
+    </element>
+
     <element id="CareTeam.identifier">
       <path value="CareTeam.identifier" />
       <max value="0" />
@@ -42,6 +98,10 @@
       </type>
     </element>
     <element>
+      <path value="CareTeam.subject.extension" />
+      <max value="0" />
+    </element>
+    <element>
       <path value="CareTeam.subject.reference" />
       <short value="Relative Reference to Medic Alert Member" />
       <definition value="Medic Alert Member" />
@@ -68,10 +128,18 @@
       <path value="CareTeam.participant" />
       <definition value="Doctors listed for the patient" />
     </element>
+    <element>
+      <path value="CareTeam.participant.extension" />
+      <max value="0" />
+    </element>
     <element id="CareTeam.participant.role">
       <path value="CareTeam.participant.role" />
       <definition value="Type of Doctor" />
       <comment value="n/a" />
+    </element>
+    <element>
+      <path value="CareTeam.participant.role.extension" />
+      <max value="0" />
     </element>
     <element id="CareTeam.participant.role.coding">
       <path value="CareTeam.participant.role.coding" />
@@ -98,8 +166,12 @@
       </type>
     </element>
     <element>
+      <path value="CareTeam.participant.member.extension" />
+      <max value="0" />
+    </element>
+    <element>
       <path value="CareTeam.participant.member.reference" />
-      <short value="Contained Reference to Doctor" />
+      <short value="Reference to contained above (starts with #)" />
       <definition value="Contained reference to doctor" />
       <comment value="reference starts with #" />
       <min value="1" />

@@ -16,6 +16,44 @@
   <differential>
     <element id="Practitioner">
       <path value="Practitioner" />
+    </element>
+    <element id="Practitioner.id">
+      <path value="Practitioner.id" />
+      <short value="Resource Id"/>
+      <min value="1" />
+    </element>
+    <!-- no meta (e.g. last updated) -->
+    <element id="Practitioner.meta" >
+      <path value="Practitioner.meta" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.implicitRules">
+      <path value="Practitioner.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.language">
+      <path value="Practitioner.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Practitioner.text" />
+      <min value="0" />
+    </element>
+    <element id="Practitioner.contained">
+      <path value="Practitioner.contained" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.extension">
+      <path value="Practitioner.extension" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.modifierExtension">
+      <path value="Practitioner.modifierExtension" />
+      <max value="0" />
+    </element>
+
+  <element id="Practitioner">
+      <path value="Practitioner" />
       <short value="Doctor - part of a Medic Alert Care Team" />
       <definition value="Doctor in a medic alert member record" />
       <comment value="n/a" />

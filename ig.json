@@ -38,6 +38,7 @@
 	"tool": "jekyll",
 	"fixed-business-version": "0.1",
 	"canonicalBase": "http://build.fhir.org/ig/grahamegrieve/medicalert",
+  "path-pattern" : "[type]-[id].html",
 	"dependencyList": [{
 		"name": "uscore",
 		"location": "http://hl7.org/fhir/us/core/"

@@ -14,6 +14,44 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Device" />
   <derivation value="constraint" />
   <differential>
+    <element id="Device">
+      <path value="Device" />
+    </element>
+    <element id="Device.id">
+      <path value="Device.id" />
+      <short value="Resource Id"/>
+      <min value="1" />
+    </element>
+    <!-- no meta (e.g. last updated) -->
+    <element id="Device.meta" >
+      <path value="Device.meta" />
+      <max value="0" />
+    </element>
+    <element id="Device.implicitRules">
+      <path value="Device.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Device.language">
+      <path value="Device.language" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Device.text" />
+      <min value="0" />
+    </element>
+    <element id="Device.contained">
+      <path value="Device.contained" />
+      <max value="0" />
+    </element>
+    <element id="Device.extension">
+      <path value="Device.extension" />
+      <max value="0" />
+    </element>
+    <element id="Device.modifierExtension">
+      <path value="Device.modifierExtension" />
+      <max value="0" />
+    </element>
+
     <element id="Device.identifier">
       <path value="Device.identifier" />
       <max value="0" />
@@ -31,6 +69,10 @@
       <definition value="What type this device is" />
       <comment value="n/a" />
       <min value="1" />
+    </element>
+    <element id="Device.type.extension">
+      <path value="Device.type.extension" />
+      <max value="0" />
     </element>
     <element id="Device.type.coding">
       <path value="Device.type.coding" />
