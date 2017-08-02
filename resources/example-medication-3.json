@@ -1,0 +1,30 @@
+{
+	"resourceType": "MedicationStatement",
+	"id": "12548",
+	"status": "completed",
+	"medicationCodeableConcept": {
+		"coding": [{
+			"system": "http://snomed.info/sct",
+			"code": "387112002"
+		},
+		{
+			"system": "http://www.mims.com.au/",
+			"code": "<​code>"
+		}],
+		"text": "Silver sulfadiazine (substance)"
+	},
+	"subject": {
+		"reference": "Patient/1265489"
+	},
+	"derivedFrom": [{
+		"display": "Prescribed 1/06/2014"
+	}],
+	"taken": "y",
+	"note": [{
+		"text": "Dispensed 5/06/2014"
+	}],
+	"dosage": [{
+		"text": "As required"
+	}]
+	
+}

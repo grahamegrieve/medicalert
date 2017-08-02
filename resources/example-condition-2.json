@@ -1,0 +1,18 @@
+  {
+  	"resourceType":"Condition",
+    "id" : "13014017", 
+    "clinicalStatus" : "active", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://snomed.info/sct",
+        "code" : "8392000" 
+      }],
+      "text" : "Non-smoker" 
+    },
+    "subject" : { 
+      "reference" : "Patient/1265489"
+    },
+    "note" : [{ 
+      "text" : "I'm living longerrrrrr"
+    }]
+}

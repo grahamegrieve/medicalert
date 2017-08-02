@@ -1,0 +1,31 @@
+ {
+  	"resourceType":"MedicationStatement",
+    "id" : "7416", 
+    "status" : "completed", 
+    "medicationCodeableConcept" : { 
+      "coding" : [ 
+        {
+          "system" : "http://snomed.info/sct", 
+          "code" : "334980009" 
+        },
+        { 
+          "system" : "http://www.mims.com.au/", 
+          "code" : "<​code>" 
+        }
+      ],
+      "text" : "Inhaler (physical object)"
+    },
+    "subject" : { 
+      "reference" : "Patient/1265489"
+    },
+    "derivedFrom" : [{ 
+      "display" : "Prescribed 8/07/2013" 
+    }],
+    "taken" : "y", 
+    "note" : [{ 
+      "text" : "Combivent Inhaler - Dispensed 9/07/2013"
+    }],
+    "dosage" : [{ 
+      "text" : "As required" 
+    }]
+  }

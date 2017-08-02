@@ -1,0 +1,14 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "11010928", 
+  "name" : [{
+    "text" : "STORY DR P"
+   }],
+   "address" : [{
+      "text" : "Stortford Lodge, Hastings", 
+      "line" : ["Stortford Lodge"], 
+      "city" : "Hastings", 
+      "district" : "Napier", 
+      "country" : "New Zealand"
+   }]
+}

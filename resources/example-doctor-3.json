@@ -1,0 +1,14 @@
+{
+	"resourceType": "Practitioner",
+	"id": "10988336",
+	"name": [{
+		"text": "ACCIDENT & MEDICAL CLINIC"
+	}],
+	"address": [{
+		"text": "202 Ponsonby Road, Ponsonby, Auckland",
+		"line": ["202 Ponsonby Road"],
+		"city": "Ponsonby, Auckland",
+		"district": "Napier",
+		"country": "New Zealand"
+	}]
+}

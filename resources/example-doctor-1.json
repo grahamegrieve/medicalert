@@ -1,0 +1,15 @@
+{
+  "resourceType" : "Practitioner",
+  "id" : "10999560", 
+  "name" : [{
+    "text" : "RAILTON DR P A R"
+   }],
+   "address" : [{
+    "use" : "home", 
+    "text" : "258 Bracken Avenue, Takapuna, Auckland", 
+    "line" : ["258 Bracken Avenue"], 
+    "city" : "Takapuna", 
+    "district" : "Auckland", 
+    "country" : "New Zealand"
+   }]
+}

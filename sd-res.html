@@ -40,9 +40,9 @@ Examples
  <a title="link to here" class="self-link" href="{{[type]}}-{{[id]}}.html#examples"><img src="target.png"/></a>
 </h4>
 
-<p>
-<i>Still to be done</i>
-</p>
+<ul>
+{% include list-{{[sd.type-plural]}}-json.xhtml %}
+</ul>
 
 <a name="profile"> </a>
 <h4><span class="sectioncount">SD.{{ site.data.structuredefinitions.{{[id]}}.index | plus: 1 }}.3</span>

@@ -1,0 +1,18 @@
+  {
+  	"resourceType":"Condition",
+    "id" : "14086641", 
+    "clinicalStatus" : "active", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://snomed.info/sct", 
+        "code" : "125666000"
+      }],
+      "text" : "Burn" 
+    },
+    "subject" : { 
+      "reference" : "Patient/1265489"
+    },
+    "note" : [{ 
+      "text" : "it burnssssszz zusssss"
+    }]
+ }

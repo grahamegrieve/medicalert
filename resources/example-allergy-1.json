@@ -1,0 +1,23 @@
+{
+  	"resourceType":"AllergyIntolerance",
+    "id" : "12843069", 
+    "verificationStatus" : "confirmed", 
+    "clinicalStatus" : "active", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://snomed.info/sct", 
+        "code" : "432807008" 
+      }],
+      "text" : "Pollen-food allergy"
+    },
+    "patient" : { 
+      "reference" : "Patient/1265489"
+    },
+    "assertedDate" : "2014-06-05", 
+    "recorder" : { 
+      "display" : "Patient/1265489"
+    },
+    "note" : [{ 
+      "text" : "Severe during Spring"
+    }]
+}

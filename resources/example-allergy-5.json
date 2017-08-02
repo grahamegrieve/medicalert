@@ -1,0 +1,16 @@
+  {
+  	"resourceType":"AllergyIntolerance",
+    "id" : "12904993",
+    "verificationStatus" : "confirmed",
+    "clinicalStatus" : "active", 
+    "code" : {
+      "text" : "Iodine compounds" 
+    },
+    "patient" : { 
+      "reference" : "Patient/1265489"
+    },
+    "assertedDate" : "2014-08-22",
+    "recorder" : { 
+      "display" : "Patient/1265489"
+    }
+ }

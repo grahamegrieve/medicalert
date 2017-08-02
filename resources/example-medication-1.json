@@ -1,0 +1,32 @@
+{
+  	"resourceType":"MedicationStatement",
+    "id" : "12843041", 
+    "status" : "completed", 
+    "medicationCodeableConcept" : { 
+      "coding" : [
+        { 
+          "system" : "http://snomed.info/sct", 
+          "code" : "387458008" 
+        },
+        { 
+          "system" : "http://www.mims.com.au/", 
+          "code" : "<​code>" 
+        }
+      ],
+      "text" : "Aspirin (substance)"
+    },
+    "subject" : { 
+      "reference" : "Patient/1265489"
+    },
+    "derivedFrom" : [{ 
+      "display" : "Prescribed 6/09/2013"
+    }],
+    "taken" : "y",
+    "note" : [{ 
+      "text" : "Dispensed 6/09/2013"
+    }],
+    "dosage" : [{ 
+      "text" : "1 as required"
+    }]
+  }
+

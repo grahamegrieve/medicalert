@@ -1,0 +1,18 @@
+  {
+  	"resourceType":"Condition",
+    "id" : "229392", 
+    "clinicalStatus" : "active", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://snomed.info/sct", 
+        "code" : "95570007" 
+      }],
+      "text" : "Kidney stone (disorder)" 
+    },
+    "subject" : { 
+      "reference" : "Patient/1265489"
+    },
+    "note" : [{ 
+      "text" : "pukana blahhhh"
+    }]
+ }

@@ -1,0 +1,29 @@
+{
+   "resourceType" : "CareTeam",
+    "id" : "1265489", 
+    "subject" : { 
+      "reference" : "Patient/1265489"
+    },
+    "participant" : [{ 
+      "role" : { 
+        "text" : "GP" 
+      },
+      "member" : { 
+        "reference" : "Practitioner/10999560" 
+      }
+    },{ 
+      "role" : { 
+        "text" : "Visited while holidaying" 
+      },
+      "member" : { 
+        "reference" : "Practitioner/11010928" 
+      }
+    },{ 
+      "role" : { 
+        "text" : "A&E" 
+      },
+      "member" : { 
+        "reference" : "Practitioner/10988336" 
+      }
+    }]
+}

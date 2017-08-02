@@ -1,0 +1,20 @@
+{
+  	"resourceType":"AllergyIntolerance",
+    "id" : "12886696", 
+    "verificationStatus" : "confirmed", 
+    "clinicalStatus" : "active", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://snomed.info/sct", 
+        "code" : "91936005" 
+      }],
+      "text" : "Allergy to penicillin" 
+    },
+    "patient" : { 
+      "reference" : "Patient/1265489"
+    },
+    "assertedDate" : "2014-06-05",
+    "recorder" : { 
+      "display" : "Patient/1265489"
+    }
+}

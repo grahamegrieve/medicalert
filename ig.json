@@ -21,7 +21,8 @@
 		},
 		"StructureDefinition": {
 			"template-defns": "sd-definitions.html",
-			"template-base": "sd.html",
+			"template-base-complextype": "sd-type.html",
+			"template-base-resource": "sd-res.html",
 			"template-mappings": "sd-mappings.html"
 		},
 		"CodeSystem": {
@@ -31,7 +32,7 @@
 			"template-base": "cm.html"
 		}
 	},
-	"gen-examples": "true",
+	"gen-examples": "false",
 	"resources": {
     "*" : true
 	},

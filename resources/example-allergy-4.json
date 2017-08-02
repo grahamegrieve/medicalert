@@ -1,0 +1,20 @@
+ {
+  	"resourceType":"AllergyIntolerance",
+    "id" : "13089407", 
+    "verificationStatus" : "confirmed", 
+    "clinicalStatus" : "active", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://snomed.info/sct", 
+        "code" : "294179008"
+      }],
+      "text" : "Sulfur allergy" 
+    },
+    "patient" : { 
+      "reference" : "Patient/1265489"
+    },
+    "assertedDate" : "2014-06-05",
+    "recorder" : { 
+      "display" : "Patient/1265489"
+    }
+ }
