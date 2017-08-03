@@ -25,7 +25,11 @@ Both Medic Alert New Zealand and Australia implement this web service. In additi
 web server that can be used to access synthesised patient data. The actual server address is referred
 to throughout this implementation as [server]. For the test server, the address is:
 
-http://test.healthintersections.com.au/medicalert
+https://test.healthintersections.com.au/medicalert
+
+Note that this test server, in addition to the secure interface described below, also offers an insecure interface
+at <http://test.healthintersections.com.au/medicalert> to aid with testing. This requires no log in, certificates,
+etc, and is not an option on the production servers
 
 # Security 
 
