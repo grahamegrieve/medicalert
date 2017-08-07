@@ -1,0 +1,16 @@
+ {
+   "resourceType" : "Observation",
+    "id" : "1265489", 
+    "status" : "final", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://loinc.org", 
+        "code" : "883-9", 
+        "display" : "ABO Group Bld" 
+      }]
+    },
+    "subject" : { 
+      "reference" : "Patient/1265489" 
+    },
+    "valueString" : "B+"
+  }
