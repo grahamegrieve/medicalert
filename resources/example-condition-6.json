@@ -1,0 +1,18 @@
+{
+  	"resourceType":"Condition",
+    "id" : "12853866b", 
+    "clinicalStatus" : "active", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://snomed.info/sct", 
+        "code" : "84757009" 
+      }],
+      "text" : "Epilepsy (disorder)"
+    },
+    "subject" : {
+      "reference" : "Patient/28765"
+    },
+    "note" : [{ 
+      "text" : "fits every 5mins"
+    }]
+}

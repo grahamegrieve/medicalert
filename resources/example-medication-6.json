@@ -1,0 +1,32 @@
+{
+  	"resourceType":"MedicationStatement",
+    "id" : "141981", 
+    "status" : "completed", 
+    "medicationCodeableConcept" : { 
+      "coding" : [
+        { 
+          "system" : "http://snomed.info/sct", 
+          "code" : "109083009" 
+        },
+        { 
+          "system" : "http://www.mims.com.au/", 
+          "code" : "<​code>" 
+        }
+      ],
+      "text" : "Metformin hydrochloride (substance)"
+    },
+    "subject" : { 
+      "reference" : "Patient/28765"
+    },
+    "derivedFrom" : [{ 
+      "display" : "Prescribed 1/01/2015"
+    }],
+    "taken" : "y",
+    "note" : [{ 
+      "text" : "Dispensed 15/01/2015"
+    }],
+    "dosage" : [{ 
+      "text" : "As required"
+    }]
+  }
+

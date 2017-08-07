@@ -1,0 +1,32 @@
+{
+  	"resourceType":"MedicationStatement",
+    "id" : "7711", 
+    "status" : "completed", 
+    "medicationCodeableConcept" : { 
+      "coding" : [
+        { 
+          "system" : "http://snomed.info/sct", 
+          "code" : "387220006" 
+        },
+        { 
+          "system" : "http://www.mims.com.au/", 
+          "code" : "<​code>" 
+        }
+      ],
+      "text" : "Phenytoin (substance)"
+    },
+    "subject" : { 
+      "reference" : "Patient/28765"
+    },
+    "derivedFrom" : [{ 
+      "display" : "Prescribed 8/11/2014"
+    }],
+    "taken" : "y",
+    "note" : [{ 
+      "text" : "Dispensed 11/12/2014"
+    }],
+    "dosage" : [{ 
+      "text" : "As required"
+    }]
+  }
+

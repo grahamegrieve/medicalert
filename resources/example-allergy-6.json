@@ -1,0 +1,20 @@
+{
+  	"resourceType":"AllergyIntolerance",
+    "id" : "12904993a", 
+    "verificationStatus" : "confirmed", 
+    "clinicalStatus" : "active", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://snomed.info/sct", 
+        "code" : "294913003" 
+      }],
+      "text" : "Iodine compounds allergy (disorder)"
+    },
+    "patient" : { 
+      "reference" : "Patient/196209"
+    },
+    "assertedDate" : "2014-06-05", 
+    "recorder" : { 
+      "display" : "Patient/196209"
+    }
+}

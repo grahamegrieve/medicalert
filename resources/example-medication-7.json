@@ -1,0 +1,32 @@
+{
+  	"resourceType":"MedicationStatement",
+    "id" : "177165", 
+    "status" : "completed", 
+    "medicationCodeableConcept" : { 
+      "coding" : [
+        { 
+          "system" : "http://snomed.info/sct", 
+          "code" : "116602009" 
+        },
+        { 
+          "system" : "http://www.mims.com.au/", 
+          "code" : "<​code>" 
+        }
+      ],
+      "text" : "Prednisone (substance)"
+    },
+    "subject" : { 
+      "reference" : "Patient/28765"
+    },
+    "derivedFrom" : [{ 
+      "display" : "Prescribed 07/12/2014"
+    }],
+    "taken" : "y",
+    "note" : [{ 
+      "text" : "Dispensed 10/12/2014"
+    }],
+    "dosage" : [{ 
+      "text" : "As required"
+    }]
+  }
+

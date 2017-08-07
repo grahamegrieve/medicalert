@@ -1,0 +1,32 @@
+{
+  	"resourceType":"MedicationStatement",
+    "id" : "166151", 
+    "status" : "completed", 
+    "medicationCodeableConcept" : { 
+      "coding" : [
+        { 
+          "system" : "http://snomed.info/sct", 
+          "code" : "411530000" 
+        },
+        { 
+          "system" : "http://www.mims.com.au/", 
+          "code" : "<​code>" 
+        }
+      ],
+      "text" : "Insulin glulisine (substance)"
+    },
+    "subject" : { 
+      "reference" : "Patient/28765"
+    },
+    "derivedFrom" : [{ 
+      "display" : "Prescribed 1/01/2015"
+    }],
+    "taken" : "y",
+    "note" : [{ 
+      "text" : "Dispensed 15/01/2015"
+    }],
+    "dosage" : [{ 
+      "text" : "As required"
+    }]
+  }
+

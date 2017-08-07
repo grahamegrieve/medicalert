@@ -1,0 +1,32 @@
+{
+  	"resourceType":"MedicationStatement",
+    "id" : "12843049c", 
+    "status" : "completed", 
+    "medicationCodeableConcept" : { 
+      "coding" : [
+        { 
+          "system" : "http://snomed.info/sct", 
+          "code" : "387458008" 
+        },
+        { 
+          "system" : "http://www.mims.com.au/", 
+          "code" : "<​code>" 
+        }
+      ],
+      "text" : "Aspirin (substance)"
+    },
+    "subject" : { 
+      "reference" : "Patient/196209"
+    },
+    "derivedFrom" : [{ 
+      "display" : "Prescribed 2/02/2014"
+    }],
+    "taken" : "y",
+    "note" : [{ 
+      "text" : "1 tab when stung by animal"
+    }],
+    "dosage" : [{ 
+      "text" : "1 at a time"
+    }]
+  }
+

@@ -1,0 +1,32 @@
+{
+  	"resourceType":"MedicationStatement",
+    "id" : "10416", 
+    "status" : "completed", 
+    "medicationCodeableConcept" : { 
+      "coding" : [
+        { 
+          "system" : "http://snomed.info/sct", 
+          "code" : "387264003" 
+        },
+        { 
+          "system" : "http://www.mims.com.au/", 
+          "code" : "<​code>" 
+        }
+      ],
+      "text" : "Diazepam (substance)"
+    },
+    "subject" : { 
+      "reference" : "Patient/28765"
+    },
+    "derivedFrom" : [{ 
+      "display" : "Prescribed 8/11/2014"
+    }],
+    "taken" : "y",
+    "note" : [{ 
+      "text" : "Dispensed 12/12/2014"
+    }],
+    "dosage" : [{ 
+      "text" : "As required"
+    }]
+  }
+

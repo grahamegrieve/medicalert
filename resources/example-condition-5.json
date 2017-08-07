@@ -1,0 +1,18 @@
+{
+  	"resourceType":"Condition",
+    "id" : "12853866a", 
+    "clinicalStatus" : "active", 
+    "code" : { 
+      "coding" : [{ 
+        "system" : "http://snomed.info/sct", 
+        "code" : "46635009" 
+      }],
+      "text" : "Diabetes mellitus type 1 (disorder)"
+    },
+    "subject" : {
+      "reference" : "Patient/28765"
+    },
+    "note" : [{ 
+      "text" : "will have diabetes for the rest of their life"
+    }]
+}
