@@ -3,6 +3,13 @@
 	"id": "12886427",
 	"verificationStatus": "confirmed",
 	"clinicalStatus": "active",
+  "criticality" : "high",
+  "_criticality" : {
+    "extension": {
+      "url" : "http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/RiskNumber",
+      "valueDecimal" : "2"
+    }
+  },
 	"code": {
 		"coding": [{
 			"system": "http://snomed.info/sct",

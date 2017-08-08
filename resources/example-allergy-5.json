@@ -3,6 +3,13 @@
     "id" : "12904993",
     "verificationStatus" : "confirmed",
     "clinicalStatus" : "active", 
+    "criticality" : "high",
+    "_criticality" : {
+      "extension": {
+        "url" : "http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/RiskNumber",
+        "valueDecimal" : "4"
+      }
+    },
     "code" : {
       "text" : "Iodine compounds" 
     },

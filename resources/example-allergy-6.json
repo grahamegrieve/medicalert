@@ -3,6 +3,7 @@
     "id" : "12904993a", 
     "verificationStatus" : "confirmed", 
     "clinicalStatus" : "active", 
+    "criticality" : "unable-to-assess",
     "code" : { 
       "coding" : [{ 
         "system" : "http://snomed.info/sct", 

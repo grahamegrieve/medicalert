@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/RiskNumber" />
+  <name value="RiskNumber" />
+  <title value="Risk Number" />
+  <status value="draft" />
+  <date value="2017-08-07T17:16:48.1065606+10:00" />
+  <publisher value="Grahame Grieve" />
+  <description value="Medical Alert Risk Number Rating" />
+  <fhirVersion value="3.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Risk Number" />
+      <definition value="Arbitrary Risk number assigned by member. &gt;1 is treated as serious" />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="StructureDefinition/MyExtension" />
+    </element>
+    <element id="Extension.value[x]:valueInteger">
+      <path value="Extension.valueDecimal" />
+      <sliceName value="valueDecimal" />
+      <short value="Risk Number" />
+      <definition value="The actual value of the risk number" />
+      <min value="1" />
+      <type>
+        <code value="decimal" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

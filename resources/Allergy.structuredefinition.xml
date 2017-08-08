@@ -88,8 +88,30 @@
     </element>
     <element id="AllergyIntolerance.criticality">
       <path value="AllergyIntolerance.criticality" />
-      <max value="0" />
+      <max value="1" />
     </element>
+    <element>
+      <path value="AllergyIntolerance.criticality.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="AllergyIntolerance.criticality:Risk">
+      <path value="AllergyIntolerance.criticality.extension" />
+      <sliceName value="Risk" />
+      <short value="Assigned Risk" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/RiskNumber" />
+      </type>
+    </element>
+    
     <element id="AllergyIntolerance.code">
       <path value="AllergyIntolerance.code" />
       <short value="Allergy details. Text, and possibly a Snomed CT code" />
