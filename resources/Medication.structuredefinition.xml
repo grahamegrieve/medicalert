@@ -104,7 +104,33 @@
     </element>
     <element id="MedicationStatement.category">
       <path value="MedicationStatement.category" />
-      <max value="0" />
+      <binding>
+        <strength value="required"/>
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality"/>
+        </valueSetReference>
+      </binding>
+    </element>
+    <element> 
+      <path value="MedicationStatement.category.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="MedicationStatement.category.extension:Risk">
+      <path value="MedicationStatement.category.extension" />
+      <sliceName value="Risk" />
+      <short value="Assigned Risk" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/RiskNumber" />
+      </type>
     </element>
     <element id="MedicationStatement.medication[x]:medicationCodeableConcept">
       <path value="MedicationStatement.medicationCodeableConcept" />

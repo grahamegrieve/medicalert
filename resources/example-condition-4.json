@@ -2,6 +2,16 @@
   	"resourceType":"Condition",
     "id" : "14086641", 
     "clinicalStatus" : "active", 
+    "severity" : {
+      "extension": [{
+        "url" : "http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/RiskNumber",
+        "valueDecimal" : "0.8"
+      }],
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality",
+        "code" : "low"
+      }]
+    },
     "code" : { 
       "coding" : [{ 
         "system" : "http://snomed.info/sct", 

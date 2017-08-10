@@ -82,7 +82,33 @@
     </element>
     <element id="Condition.severity">
       <path value="Condition.severity" />
-      <max value="0" />
+      <binding>
+        <strength value="required"/>
+        <valueSetReference>
+          <reference value="http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality"/>
+        </valueSetReference>
+      </binding>
+    </element>
+    <element> 
+      <path value="Condition.severity.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Condition.severity.extension:Risk">
+      <path value="Condition.severity.extension" />
+      <sliceName value="Risk" />
+      <short value="Assigned Risk" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/RiskNumber" />
+      </type>
     </element>
     <element id="Condition.code">
       <path value="Condition.code" />

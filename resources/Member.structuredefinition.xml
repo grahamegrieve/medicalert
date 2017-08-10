@@ -95,7 +95,7 @@
         </discriminator>
         <rules value="closed" />
       </slicing>
-      <max value="2" />
+      <max value="3" />
     </element>
     <element id="Patient.identifier:NHINumber">
       <path value="Patient.identifier" />
@@ -118,7 +118,7 @@
     <element id="Patient.identifier:NHINumber.system">
       <path value="Patient.identifier.system" />
       <min value="1" />
-      <fixedUri value="http://health.govt.nz/nhi " />
+      <fixedUri value="http://health.govt.nz/nhi" />
     </element>
     <element id="Patient.identifier:NHINumber.value">
       <path value="Patient.identifier.value" />
@@ -129,6 +129,41 @@
       <max value="0" />
     </element>
     <element id="Patient.identifier:NHINumber.assigner">
+      <path value="Patient.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:NationalIHI">
+      <path value="Patient.identifier" />
+      <sliceName value="NationalIHI" />
+      <short value="NHI Number"/>
+      <max value="1" />
+    </element>
+    <element id="Patient.identifier:NationalIHI.extension">
+      <path value="Patient.identifier.extension" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:NationalIHI.use">
+      <path value="Patient.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:NationalIHI.type">
+      <path value="Patient.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:NationalIHI.system">
+      <path value="Patient.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://ns.electronichealth.net.au/id/hi/ihi/1.0" />
+    </element>
+    <element id="Patient.identifier:NationalIHI.value">
+      <path value="Patient.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:NationalIHI.period">
+      <path value="Patient.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:NationalIHI.assigner">
       <path value="Patient.identifier.assigner" />
       <max value="0" />
     </element>

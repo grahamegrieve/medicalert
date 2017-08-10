@@ -5,10 +5,10 @@
     "clinicalStatus" : "active", 
     "criticality" : "high",
     "_criticality" : {
-      "extension": {
+      "extension": [{
         "url" : "http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/RiskNumber",
         "valueDecimal" : "3"
-      }
+      }]
     },
     "code" : { 
       "coding" : [{ 

@@ -2,6 +2,16 @@
   	"resourceType":"MedicationStatement",
     "id" : "177165", 
     "status" : "completed", 
+    "category" : {
+      "extension": [{
+        "url" : "http://build.fhir.org/ig/grahamegrieve/medicalert/StructureDefinition/RiskNumber",
+        "valueDecimal" : "0.5"
+      }],
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality",
+        "code" : "low"
+      }]
+    },
     "medicationCodeableConcept" : { 
       "coding" : [
         { 
